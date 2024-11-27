@@ -10,10 +10,13 @@ height = 0.1
 [node name="Stage" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.27118)
 mesh = SubResource("CylinderMesh_3r3al")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973085, 3.12058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0645, 14.4627)
+fov = 26.5
+far = 3959.4
 
 [node name="Clown" parent="." instance=ExtResource("1_dkf10")]
 
