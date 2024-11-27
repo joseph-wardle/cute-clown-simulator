@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1alcfb2rymg0"]
+[gd_scene load_steps=5 format=3 uid="uid://d1alcfb2rymg0"]
 
 [ext_resource type="Script" path="res://game_objects/clown/clown.gd" id="1_ru1m8"]
 
@@ -6,11 +6,19 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lgt7w"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_ru1m8"]
+
 [node name="Clown" type="CharacterBody3D"]
 script = ExtResource("1_ru1m8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_dqbbu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="ClownMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mesh = SubResource("CapsuleMesh_lgt7w")
+
+[node name="BallMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("SphereMesh_ru1m8")

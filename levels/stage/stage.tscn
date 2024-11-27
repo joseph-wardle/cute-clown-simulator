@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=3 format=3 uid="uid://d0uwejejiswbo"]
+
+[ext_resource type="PackedScene" uid="uid://d1alcfb2rymg0" path="res://game_objects/clown/clown.tscn" id="1_dkf10"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
+top_radius = 10.0
+bottom_radius = 10.0
 height = 0.1
 
 [node name="Stage" type="Node3D"]
@@ -9,3 +13,13 @@ height = 0.1
 mesh = SubResource("CylinderMesh_3r3al")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.973085, 3.12058)
+
+[node name="Clown" parent="." instance=ExtResource("1_dkf10")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+light_energy = 30.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 20.0
