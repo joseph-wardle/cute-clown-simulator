@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3dm0n4n7ue0m"]
+
+[sub_resource type="Curve3D" id="Curve3D_0civc"]
+
+[node name="ProjectileArch" type="Path3D"]
+curve = SubResource("Curve3D_0civc")
