@@ -1,7 +1,9 @@
 extends CharacterBody3D
 
 @export var max_lean_angle := 30.0
+@export var fall_speed := 20.0
 @export var lean_speed := 100.0
+@export var entropy_strength := 5.0
 @export var speed_multiplier := 0.2
 
 var lean_angle := Vector2.ZERO
@@ -19,6 +21,12 @@ func handle_input(delta: float) -> void:
 	input_vector.y = Input.get_action_strength("tilt_backward") - Input.get_action_strength("tilt_forward")
 	
 	lean_angle += input_vector * lean_speed * delta
+	
+	if lean_angle.length() > 0:
+		lean_angle += lean_angle.normalized() * fall_speed * delta
+	
+	lean_angle.x += randf_range(-entropy_strength, entropy_strength) * delta
+	lean_angle.y += randf_range(-entropy_strength, entropy_strength) * delta
 	
 	
 func update_movement(delta: float) -> void:

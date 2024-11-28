@@ -17,4 +17,3 @@ shape = SubResource("SphereShape3D_fvkfu")
 mesh = SubResource("SphereMesh_o70nm")
 
 [node name="Clown" parent="." instance=ExtResource("2_fvkfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
