@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1alcfb2rymg0"]
+[gd_scene load_steps=6 format=3 uid="uid://d1alcfb2rymg0"]
 
 [ext_resource type="Script" path="res://game_objects/clown/clown.gd" id="1_ru1m8"]
+[ext_resource type="PackedScene" uid="uid://b3dm0n4n7ue0m" path="res://game_objects/projectile_arch/projectile_arch.tscn" id="2_dqbbu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dqbbu"]
 
@@ -22,3 +23,6 @@ mesh = SubResource("CapsuleMesh_lgt7w")
 [node name="BallMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("SphereMesh_ru1m8")
+
+[node name="ProjectileArch" parent="." instance=ExtResource("2_dqbbu")]
+transform = Transform3D(1.74742, 0, 0, 0, 2.32182, 0, 0, 0, 2.32182, 0, 2.12211, 0.768022)
