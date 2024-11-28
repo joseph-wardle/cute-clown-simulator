@@ -1,49 +1,47 @@
 extends CharacterBody3D
 
-@export var max_lean_angle := 30.0
-@export var fall_speed := 50.0
-@export var lean_speed := 150.0
-@export var entropy_strength := 5.0
+@export var max_lean_angle := 50.0
+@export var gravity_strength := 100.0
+@export var input_sensitivity := 100.0
+@export var entropy_strength := 20.0
 @export var speed_multiplier := 0.2
+@export var input_smoothing := 10.0
 
 var lean_angle := 0.0
+var smoothed_input := 0.0
 
 func _physics_process(delta: float) -> void:
-	handle_input(delta)
-	update_movement(delta)
-	update_visuals(delta)
-
-	
-func handle_input(delta: float) -> void:
-	var input_vector = Vector2.ZERO
-	
-	input_vector = Input.get_action_strength("tilt_left") - Input.get_action_strength("tilt_right")
-	
-	lean_angle += input_vector * lean_speed * delta
-	
-	if abs(lean_angle) > 0:
-		lean_angle += sign(lean_angle) * fall_speed * delta
-	
-	lean_angle += randf_range(-entropy_strength, entropy_strength) * delta
-
-	
-func update_movement(delta: float) -> void:
-	var direction := Vector3(
-		sin(deg_to_rad(lean_angle)),
-		0,
-		0,
-	)
-	
-	var speed = abs(lean_angle) * speed_multiplier
-	
-	velocity = direction.normalized() * speed
-	
+	process_input(delta)
+	update_lean_angle(delta)
+	update_velocity()
 	move_and_slide()
+	check_for_fall()
+	update_visuals()
+
 	
-	if abs(lean_angle) >= max_lean_angle:
-		print("The clown has fallen!")
+func process_input(delta: float) -> void:
+	var raw_input := Input.get_action_strength("tilt_left") - Input.get_action_strength("tilt_right")
+	smoothed_input = lerp(smoothed_input, raw_input, input_smoothing * delta)
+
+
+func update_lean_angle(delta: float) -> void:
+	var input_effect := smoothed_input * input_sensitivity * delta
+	var gravity_effect := sin(deg_to_rad(lean_angle)) * gravity_strength * delta
+	var entropy_effect := randf_range(-1, 1) * entropy_strength * delta
+	lean_angle += input_effect + gravity_effect + entropy_effect
+	lean_angle = clamp(lean_angle, -max_lean_angle, max_lean_angle)
+
 	
+func update_velocity() -> void:
+	var movement_direction := Vector3(sin(deg_to_rad(lean_angle)), 0, 0)
+	var movement_speed : float = abs(lean_angle) * speed_multiplier
+	velocity = movement_direction.normalized() * movement_speed
 	
+
+func check_for_fall() -> void:
+	if abs(lean_angle) >= max_lean_angle - 0.1:
+		print("CLOWN HAS FALLEN!!! REPEAT: CLOWN HAS FALLEN!!!")
 	
-func update_visuals(delta: float) -> void:
+		
+func update_visuals() -> void:
 	$Clown.rotation_degrees.z = lean_angle
