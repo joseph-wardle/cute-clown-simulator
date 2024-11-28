@@ -17,7 +17,8 @@ transform = Transform3D(30.5951, 0, 0, 0, 30.5951, 0, 0, 0, 30.5951, 0, 0, 0)
 curve = SubResource("Curve3D_0civc")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(-6.65007e-08, 0.991494, 0.130157, 5.96045e-08, 0.130157, -0.991494, -1, -5.81771e-08, -6.7753e-08, 1, 0, 0)
+transform = Transform3D(2.97146e-08, -0.609153, 0.793048, 5.96046e-08, 0.793048, 0.609153, -1, 2.91686e-08, 5.98734e-08, -0.621062, 0.77301, 0)
+progress = 2.24087
 script = ExtResource("1_yd8n4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D"]
