@@ -1,27 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=5 format=3 uid="uid://d0uwejejiswbo"]
 
-[ext_resource type="PackedScene" uid="uid://d1alcfb2rymg0" path="res://game_objects/clown/clown.tscn" id="1_dkf10"]
+[ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dkf10"]
+size = Vector3(30, 2, 2)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
 bottom_radius = 10.0
 height = 0.1
 
-[sub_resource type="BoxMesh" id="BoxMesh_dkf10"]
-size = Vector3(30, 2, 2)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dkf10"]
+height = 0.1
+radius = 10.0
 
 [node name="Stage" type="Node3D"]
-
-[node name="platform" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.27118)
-mesh = SubResource("CylinderMesh_3r3al")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0645, 14.4627)
 fov = 26.5
 far = 3959.4
-
-[node name="Clown" parent="." instance=ExtResource("1_dkf10")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
@@ -53,3 +51,16 @@ light_energy = 2.664
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.541019, 0.841011, 0, -0.841011, 0.541019, 0, 4.99417, 8.27294)
 light_energy = 0.232
+
+[node name="Ball" parent="." instance=ExtResource("1_dkf10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Platform" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.2)
+
+[node name="PlatformMesh" type="MeshInstance3D" parent="Platform"]
+mesh = SubResource("CylinderMesh_3r3al")
+skeleton = NodePath("../..")
+
+[node name="PlatformHitbox" type="CollisionShape3D" parent="Platform"]
+shape = SubResource("CylinderShape3D_dkf10")
