@@ -66,3 +66,4 @@ func _get_input_result(delta: float) -> InputType:
 func _on_timeout() -> void:
 	emit_signal("beat")
 	last_beat_time = Time.get_ticks_msec()
+	print("BEAT")

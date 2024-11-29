@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=8 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
+[ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
+[ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dkf10"]
 size = Vector3(30, 2, 2)
@@ -67,3 +69,9 @@ skeleton = NodePath("../..")
 shape = SubResource("CylinderShape3D_dkf10")
 
 [node name="RhythemCounter" parent="." instance=ExtResource("2_atwpc")]
+
+[node name="TEMPORARY_METRONOME" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3cion")
+script = ExtResource("4_pnnt3")
+
+[connection signal="beat" from="RhythemCounter" to="TEMPORARY_METRONOME" method="_on_rhythem_counter_beat"]
