@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=6 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
+[ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dkf10"]
 size = Vector3(30, 2, 2)
@@ -64,3 +65,5 @@ skeleton = NodePath("../..")
 
 [node name="PlatformHitbox" type="CollisionShape3D" parent="Platform"]
 shape = SubResource("CylinderShape3D_dkf10")
+
+[node name="RhythemCounter" parent="." instance=ExtResource("2_atwpc")]
