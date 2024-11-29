@@ -1,9 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=9 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 [ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
+
+[sub_resource type="GDScript" id="GDScript_3cion"]
+script/source = "extends SpotLight3D
+
+func _process(delta):
+	var target_node = get_node(\"../Ball\")
+	if target_node:
+		#global_transform.origin = target_node.global_transform.origin
+		look_at(target_node.global_transform.origin)
+"
 
 [sub_resource type="BoxMesh" id="BoxMesh_dkf10"]
 size = Vector3(30, 2, 2)
@@ -30,6 +40,7 @@ light_energy = 30.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 20.0
+script = SubResource("GDScript_3cion")
 
 [node name="1stbleacher" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.431869, -10.7632)
