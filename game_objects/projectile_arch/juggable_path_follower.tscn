@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://nv8unl2f7meh"]
+
+[ext_resource type="Script" path="res://game_objects/projectile_arch/path_follow_3d.gd" id="1_ab4ki"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_yd8n4"]
+
+[node name="PathFollow3D" type="PathFollow3D"]
+transform = Transform3D(4.37114e-08, -3.82135e-15, -0.999996, -8.74228e-08, -0.999996, 0, -1, 8.74224e-08, -4.37112e-08, 0, 0, 0)
+progress = 2268.8
+script = ExtResource("1_ab4ki")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.236192, -0.00124138, -0.00815711, 0.000964375, 0.23102, -0.0599912, -0.00834437, 0.0618376, 0.223958, 0, 0, 0)
+mesh = SubResource("SphereMesh_yd8n4")

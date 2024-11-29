@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3dm0n4n7ue0m"]
+[gd_scene load_steps=5 format=3 uid="uid://b3dm0n4n7ue0m"]
 
+[ext_resource type="Script" path="res://game_objects/projectile_arch/object_spawner.gd" id="1_c1bbu"]
 [ext_resource type="Script" path="res://game_objects/projectile_arch/path_follow_3d.gd" id="1_yd8n4"]
 
 [sub_resource type="Curve3D" id="Curve3D_0civc"]
@@ -15,10 +16,11 @@ point_count = 14
 [node name="ProjectileArch" type="Path3D"]
 transform = Transform3D(30.5951, 0, 0, 0, 30.5951, 0, 0, 0, 30.5951, 0, 0, 0)
 curve = SubResource("Curve3D_0civc")
+script = ExtResource("1_c1bbu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(2.97146e-08, -0.609153, 0.793048, 5.96046e-08, 0.793048, 0.609153, -1, 2.91686e-08, 5.98734e-08, -0.621062, 0.77301, 0)
-progress = 2.24087
+transform = Transform3D(4.37114e-08, -3.82133e-15, -0.999989, -8.74228e-08, -0.999989, 0, -1, 8.74218e-08, -4.37109e-08, -0.819458, 0, 0)
+progress = 3.31296
 script = ExtResource("1_yd8n4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D"]
