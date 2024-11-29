@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=10 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
+[ext_resource type="Script" path="res://levels/stage/omni_light_3d.gd" id="1_pnnt3"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 [ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
@@ -61,6 +62,7 @@ mesh = SubResource("BoxMesh_dkf10")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1856, 3.13915)
 light_energy = 2.664
+script = ExtResource("1_pnnt3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.541019, 0.841011, 0, -0.841011, 0.541019, 0, 4.99417, 8.27294)
