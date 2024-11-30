@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtfte2durrhus"]
+[gd_scene load_steps=12 format=3 uid="uid://dtfte2durrhus"]
 
 [ext_resource type="Texture2D" uid="uid://cvqnqy54afn4r" path="res://game_objects/bleacher/bleachercolor.jpg" id="1_6eb82"]
+[ext_resource type="ArrayMesh" uid="uid://bhttfe2k01ynx" path="res://game_objects/curtain/curtain.obj" id="2_7dvor"]
+[ext_resource type="Texture2D" uid="uid://bbh8ebgcmh70y" path="res://game_objects/curtain/curtaincolor.png" id="3_kemt4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dvor"]
 albedo_texture = ExtResource("1_6eb82")
@@ -22,7 +24,9 @@ albedo_texture = ExtResource("1_6eb82")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4p0n"]
 albedo_color = Color(0.121794, 0.0482219, 0.0516208, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6eb82"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrt1w"]
+transparency = 1
+albedo_texture = ExtResource("3_kemt4")
 
 [node name="Node3D" type="Node3D"]
 
@@ -55,6 +59,13 @@ transform = Transform3D(30, 0, 0, 0, -4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 6
 mesh = SubResource("PlaneMesh_hrt1w")
 surface_material_override/0 = SubResource("StandardMaterial3D_s4p0n")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, -4.37114e-08, -6, 0, 1, -2.62268e-07, -4.80752, 4.96549, 3.92623)
-mesh = SubResource("PlaneMesh_6eb82")
+[node name="curtain" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.6, 0, 0.5, 0, -2.18557e-08, -3.844, -4.0865, 2.98334)
+mesh = ExtResource("2_7dvor")
+surface_material_override/0 = SubResource("StandardMaterial3D_hrt1w")
+
+[node name="curtain2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.6, 0, 0.5, 0, 2.18557e-08, 3.92593, -4.087, 2.983)
+mesh = ExtResource("2_7dvor")
+skeleton = NodePath("../curtain")
+surface_material_override/0 = SubResource("StandardMaterial3D_hrt1w")
