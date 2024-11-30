@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtfte2durrhus"]
+
+[ext_resource type="Texture2D" uid="uid://cvqnqy54afn4r" path="res://game_objects/bleacher/bleachercolor.jpg" id="1_6eb82"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dvor"]
+albedo_texture = ExtResource("1_6eb82")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kemt4"]
+size = Vector3(30, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy4yk"]
+albedo_texture = ExtResource("1_6eb82")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr3vi"]
+albedo_texture = ExtResource("1_6eb82")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m47om"]
+albedo_texture = ExtResource("1_6eb82")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hrt1w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4p0n"]
+albedo_color = Color(0.121794, 0.0482219, 0.0516208, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="1stbleacher" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.431869, -10.7632)
+material_override = SubResource("StandardMaterial3D_7dvor")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../..")
+
+[node name="2ndbleacher" type="MeshInstance3D" parent="1stbleacher"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.2999, -4.7055)
+material_override = SubResource("StandardMaterial3D_dy4yk")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../../..")
+
+[node name="3rdbleacher" type="MeshInstance3D" parent="1stbleacher"]
+transform = Transform3D(1, 0, 0, 0, -0.99863, 0.052336, 0, -0.052336, -0.99863, 0, 3.0336, -9.4276)
+material_override = SubResource("StandardMaterial3D_vr3vi")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../../..")
+
+[node name="3rdbleacher2" type="MeshInstance3D" parent="1stbleacher"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 4.71908, -14.8206)
+material_override = SubResource("StandardMaterial3D_m47om")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="1stbleacher"]
+transform = Transform3D(30, 0, 0, 0, -4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 6.69921, -38.6076)
+mesh = SubResource("PlaneMesh_hrt1w")
+surface_material_override/0 = SubResource("StandardMaterial3D_s4p0n")
