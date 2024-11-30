@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=11 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
+[ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 [ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
@@ -30,6 +31,8 @@ skeleton = NodePath("../../..")
 
 [node name="PlatformHitbox" type="CollisionShape3D" parent="LevelGeometry/Platform"]
 shape = SubResource("CylinderShape3D_dkf10")
+
+[node name="backstage" parent="LevelGeometry" instance=ExtResource("1_eecbs")]
 
 [node name="LevelLights" type="Node3D" parent="."]
 
