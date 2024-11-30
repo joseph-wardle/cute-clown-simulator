@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
-[ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
-[ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
 [ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
 [ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="6_w25ds"]
 [ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://game_objects/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
+[ext_resource type="AudioStream" uid="uid://hqj3hjcxvcgx" path="res://assets/audio/music/lv1-intro.wav" id="9_d266k"]
+[ext_resource type="PackedScene" uid="uid://bmal8j1p372r4" path="res://game_objects/music_controller/music_controller.tscn" id="10_s1kgm"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
@@ -80,10 +80,7 @@ update_rotation = false
 update_scale = false
 
 [node name="RhythmCounter" parent="." instance=ExtResource("2_atwpc")]
-
-[node name="TEMPORARY_METRONOME" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_3cion")
-script = ExtResource("4_pnnt3")
+wait_time = 1.1
 
 [node name="InputIndicator" parent="." instance=ExtResource("5_pnnt3")]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3.08622, 1.55896)
@@ -112,6 +109,11 @@ grow_vertical = 1
 fill_mode = 3
 show_percentage = false
 
-[connection signal="beat" from="RhythmCounter" to="TEMPORARY_METRONOME" method="_on_rhythem_counter_beat"]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_d266k")
+autoplay = true
+
+[node name="MusicController" parent="." instance=ExtResource("10_s1kgm")]
+
 [connection signal="input_result" from="RhythmCounter" to="InputIndicator" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/CrowdMeter" method="_on_rhythm_counter_input_result"]
