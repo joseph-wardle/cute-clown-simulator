@@ -10,9 +10,9 @@ enum InputType {
 signal beat
 signal input_result(input_type: InputType)
 
-@export var perfect_window := 100.0 # 100 ms (+/- 50 ms)
-@export var good_window := 200.0    # 200 ms (+/- 100 ms)
-@export var ok_window := 300.0      # 300 ms (+/- 150 ms)
+@export var perfect_window := 200.0 
+@export var good_window := 300.0
+@export var ok_window := 400.0
 
 var bpm: float:
 	get:
@@ -27,6 +27,7 @@ var ok_half_window: float
 
 func _ready() -> void:
 	_update_half_windows()
+	bpm = 108
 	
 	
 func _update_half_windows() -> void:
