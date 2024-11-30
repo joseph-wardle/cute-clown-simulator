@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtfte2durrhus"]
+[gd_scene load_steps=10 format=3 uid="uid://dtfte2durrhus"]
 
 [ext_resource type="Texture2D" uid="uid://cvqnqy54afn4r" path="res://game_objects/bleacher/bleachercolor.jpg" id="1_6eb82"]
 
@@ -21,6 +21,8 @@ albedo_texture = ExtResource("1_6eb82")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4p0n"]
 albedo_color = Color(0.121794, 0.0482219, 0.0516208, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6eb82"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -48,7 +50,11 @@ material_override = SubResource("StandardMaterial3D_m47om")
 mesh = SubResource("BoxMesh_kemt4")
 skeleton = NodePath("../../../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="1stbleacher"]
+[node name="background" type="MeshInstance3D" parent="1stbleacher"]
 transform = Transform3D(30, 0, 0, 0, -4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 6.69921, -38.6076)
 mesh = SubResource("PlaneMesh_hrt1w")
 surface_material_override/0 = SubResource("StandardMaterial3D_s4p0n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -4.37114e-08, -6, 0, 1, -2.62268e-07, -4.80752, 4.96549, 3.92623)
+mesh = SubResource("PlaneMesh_6eb82")
