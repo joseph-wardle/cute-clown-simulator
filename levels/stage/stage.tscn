@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=11 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
@@ -12,6 +12,9 @@
 top_radius = 10.0
 bottom_radius = 10.0
 height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w25ds"]
+albedo_color = Color(0.538342, 0.534691, 0.403302, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dkf10"]
 height = 0.1
@@ -27,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.2)
 [node name="PlatformMesh" type="MeshInstance3D" parent="LevelGeometry/Platform"]
 mesh = SubResource("CylinderMesh_3r3al")
 skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_w25ds")
 
 [node name="PlatformHitbox" type="CollisionShape3D" parent="LevelGeometry/Platform"]
 shape = SubResource("CylinderShape3D_dkf10")
