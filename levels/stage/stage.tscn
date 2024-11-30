@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
 [ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
 [ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="6_w25ds"]
-[ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://menus/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
+[ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://game_objects/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eecbs"]
 albedo_texture = ExtResource("1_eecbs")
