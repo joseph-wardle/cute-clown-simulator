@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 [ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
-[ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://menus/input_indicator/input_indicator.tscn" id="5_pnnt3"]
+[ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
 
 [sub_resource type="GDScript" id="GDScript_3cion"]
 script/source = "extends SpotLight3D
