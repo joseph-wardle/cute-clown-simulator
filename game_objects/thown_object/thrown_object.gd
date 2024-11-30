@@ -3,6 +3,7 @@ extends Node3D
 @export var go_up : bool = false
 @export var flash_warning : bool = false 
 @export var go_down : bool = false
+@export var done : bool = false
 
 var up_path : Path3D = null
 var up_path_follow : PathFollow3D = null
@@ -34,4 +35,6 @@ func _process(delta):
 			flash_warning = true
 		if flash_warning_sprite.duration == 0:
 			go_down = true
+		if down_path_follow.progress_ratio == 1:
+			done = true
 		

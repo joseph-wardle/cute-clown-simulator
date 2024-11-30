@@ -22,8 +22,8 @@ curve = SubResource("Curve3D_0civc")
 script = ExtResource("1_c1bbu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(4.37114e-08, -3.82122e-15, -0.999961, -8.74228e-08, -0.999961, 0, -1, 8.74193e-08, -4.37097e-08, -0.742602, 0, 0)
-progress = 3.38981
+transform = Transform3D(4.37114e-08, -3.82122e-15, -0.999961, -8.74228e-08, -0.999961, 0, -1, 8.74193e-08, -4.37097e-08, -0.824359, 0, 0)
+progress = 3.30805
 script = ExtResource("1_yd8n4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D"]
