@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=10 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
-[ext_resource type="Script" path="res://levels/stage/omni_light_3d.gd" id="1_pnnt3"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 [ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
@@ -19,16 +18,6 @@ height = 0.1
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dkf10"]
 height = 0.1
 radius = 10.0
-
-[sub_resource type="GDScript" id="GDScript_3cion"]
-script/source = "extends SpotLight3D
-
-func _process(delta):
-	var target_node = get_node(\"../Ball\")
-	if target_node:
-		#global_transform.origin = target_node.global_transform.origin
-		look_at(target_node.global_transform.origin)
-"
 
 [node name="Stage" type="Node3D"]
 
@@ -67,17 +56,15 @@ shape = SubResource("CylinderShape3D_dkf10")
 [node name="LevelLights" type="Node3D" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="LevelLights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 0.00256558, 0.999997, 0, -0.999997, 0.00256558, 0, 8.69996, 0)
 light_energy = 30.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 20.0
-script = SubResource("GDScript_3cion")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="LevelLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1856, 3.13915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46742, 2.38729)
 light_energy = 2.664
-script = ExtResource("1_pnnt3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="LevelLights"]
 transform = Transform3D(1, 0, 0, 0, 0.541019, 0.841011, 0, -0.841011, 0.541019, 0, 4.99417, 8.27294)
@@ -91,10 +78,22 @@ far = 3959.4
 [node name="Clown" parent="." instance=ExtResource("1_dkf10")]
 transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 1.07785, 0)
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Clown"]
+[node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
 remote_path = NodePath("../../InputIndicator")
 update_rotation = false
+
+[node name="SpotLight3DRemoteTransform" type="RemoteTransform3D" parent="Clown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.83775, 0)
+remote_path = NodePath("../../LevelLights/SpotLight3D")
+update_rotation = false
+update_scale = false
+
+[node name="OmniLightRemoteTransform" type="RemoteTransform3D" parent="Clown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.881957, 1.51521)
+remote_path = NodePath("../../LevelLights/OmniLight3D")
+update_rotation = false
+update_scale = false
 
 [node name="RhythmCounter" parent="." instance=ExtResource("2_atwpc")]
 
