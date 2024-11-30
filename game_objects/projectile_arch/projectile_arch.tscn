@@ -14,13 +14,13 @@ point_count = 14
 [sub_resource type="SphereMesh" id="SphereMesh_yd8n4"]
 
 [node name="ProjectileArch" type="Path3D"]
-transform = Transform3D(30.5951, 0, 0, 0, 30.5951, 0, 0, 0, 30.5951, 0, 0, 0)
+transform = Transform3D(5.04356, 0, 0, 0, 5.04356, 0, 0, 0, 5.04356, 0, 0, 0)
 curve = SubResource("Curve3D_0civc")
 script = ExtResource("1_c1bbu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(4.37114e-08, 6.60016e-15, -0.999989, 1.50996e-07, -0.999989, 0, -1, -1.50994e-07, -4.37109e-08, -0.819457, 0, 0)
-progress = 3.31296
+transform = Transform3D(4.37114e-08, -3.82124e-15, -0.999966, -8.74228e-08, -0.999966, 0, -1, 8.74198e-08, -4.37099e-08, -0.305667, 0, 0)
+progress = 3.82674
 script = ExtResource("1_yd8n4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D"]

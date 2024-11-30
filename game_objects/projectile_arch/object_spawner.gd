@@ -20,7 +20,6 @@ func add_object():
 
 func _process(delta):
 	timer = timer + delta
-	print(timer)
 	if(timer > spawnTime):
 		timer = 0
 		add_object()
