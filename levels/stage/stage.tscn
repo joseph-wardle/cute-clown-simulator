@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=11 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="Script" path="res://levels/stage/omni_light_3d.gd" id="1_pnnt3"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 [ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
+[ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://menus/input_indicator/input_indicator.tscn" id="5_pnnt3"]
 
 [sub_resource type="GDScript" id="GDScript_3cion"]
 script/source = "extends SpotLight3D
@@ -71,6 +72,11 @@ light_energy = 0.232
 [node name="Ball" parent="." instance=ExtResource("1_dkf10")]
 transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 1.07785, 0)
 
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Ball"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
+remote_path = NodePath("../../InputIndicator")
+update_rotation = false
+
 [node name="Platform" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.2)
 
@@ -81,10 +87,14 @@ skeleton = NodePath("../..")
 [node name="PlatformHitbox" type="CollisionShape3D" parent="Platform"]
 shape = SubResource("CylinderShape3D_dkf10")
 
-[node name="RhythemCounter" parent="." instance=ExtResource("2_atwpc")]
+[node name="RhythmCounter" parent="." instance=ExtResource("2_atwpc")]
 
 [node name="TEMPORARY_METRONOME" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3cion")
 script = ExtResource("4_pnnt3")
 
-[connection signal="beat" from="RhythemCounter" to="TEMPORARY_METRONOME" method="_on_rhythem_counter_beat"]
+[node name="InputIndicator" parent="." instance=ExtResource("5_pnnt3")]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3.08623, 1.55896)
+
+[connection signal="beat" from="RhythmCounter" to="TEMPORARY_METRONOME" method="_on_rhythem_counter_beat"]
+[connection signal="input_result" from="RhythmCounter" to="InputIndicator" method="_on_rhythm_counter_input_result"]

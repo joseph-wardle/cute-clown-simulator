@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_objects/rhythm_counter/rhythm_counter.gd" id="1_gajxn"]
 
-[node name="RhythemCounter" type="Timer"]
+[node name="RhythmCounter" type="Timer"]
 autostart = true
 script = ExtResource("1_gajxn")
 
