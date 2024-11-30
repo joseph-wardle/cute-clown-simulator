@@ -1,0 +1,12 @@
+TEMPOS (BPM):
+lv1 - 108
+lv2 - 126
+lv3 - 141
+
+when the gameplay begins, play [lv1-intro.wav] once
+then immediately seamlessly after, put [lv1-loop.wav] on loop
+
+when score is high enough, immediately stop the current loop then play the next intro
+like, it should be a sudden cut to the next intro (played once), then just like before, play the corresponding loop seamlessly after
+
+i think that the tempo changes should happen once the [...loop.wav] file starts and let the [...intro.wav] act as a short break cause idk how awkward it would be to program the tempo change to line up
