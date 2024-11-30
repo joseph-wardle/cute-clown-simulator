@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=18 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
+[ext_resource type="Texture2D" uid="uid://cvqnqy54afn4r" path="res://game_objects/bleacher/bleachercolor.jpg" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
 [ext_resource type="AudioStream" uid="uid://do7gvl3h4s2j" path="res://assets/audio/click.wav" id="3_3cion"]
 [ext_resource type="Script" path="res://levels/stage/temporary_metronome.gd" id="4_pnnt3"]
@@ -8,8 +9,25 @@
 [ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="6_w25ds"]
 [ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://menus/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eecbs"]
+albedo_texture = ExtResource("1_eecbs")
+
 [sub_resource type="BoxMesh" id="BoxMesh_dkf10"]
 size = Vector3(30, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wedoo"]
+albedo_texture = ExtResource("1_eecbs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d266k"]
+albedo_texture = ExtResource("1_eecbs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1kgm"]
+albedo_texture = ExtResource("1_eecbs")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xh8oh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xh8oh"]
+albedo_color = Color(0.121794, 0.0482219, 0.0516208, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
@@ -26,23 +44,32 @@ radius = 10.0
 
 [node name="1stbleacher" type="MeshInstance3D" parent="LevelGeometry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.431869, -10.7632)
+material_override = SubResource("StandardMaterial3D_eecbs")
 mesh = SubResource("BoxMesh_dkf10")
 skeleton = NodePath("../..")
 
-[node name="2ndbleacher" type="MeshInstance3D" parent="LevelGeometry"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.868036, -15.4687)
+[node name="2ndbleacher" type="MeshInstance3D" parent="LevelGeometry/1stbleacher"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.2999, -4.7055)
+material_override = SubResource("StandardMaterial3D_wedoo")
 mesh = SubResource("BoxMesh_dkf10")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="3rdbleacher" type="MeshInstance3D" parent="LevelGeometry"]
-transform = Transform3D(1, 0, 0, 0, 0.99844, -0.0558389, 0, 0.0558389, 0.99844, 0, 2.60173, -20.1908)
+[node name="3rdbleacher" type="MeshInstance3D" parent="LevelGeometry/1stbleacher"]
+transform = Transform3D(1, 0, 0, 0, -0.99863, 0.052336, 0, -0.052336, -0.99863, 0, 3.0336, -9.4276)
+material_override = SubResource("StandardMaterial3D_d266k")
 mesh = SubResource("BoxMesh_dkf10")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="3rdbleacher2" type="MeshInstance3D" parent="LevelGeometry"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.28721, -25.5838)
+[node name="3rdbleacher2" type="MeshInstance3D" parent="LevelGeometry/1stbleacher"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 4.71908, -14.8206)
+material_override = SubResource("StandardMaterial3D_s1kgm")
 mesh = SubResource("BoxMesh_dkf10")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeometry/1stbleacher"]
+transform = Transform3D(30, 0, 0, 0, -4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 6.69921, -38.6076)
+mesh = SubResource("PlaneMesh_xh8oh")
+surface_material_override/0 = SubResource("StandardMaterial3D_xh8oh")
 
 [node name="Platform" type="StaticBody3D" parent="LevelGeometry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.2)
