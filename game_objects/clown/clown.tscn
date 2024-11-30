@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1alcfb2rymg0"]
 
 [ext_resource type="Script" path="res://game_objects/clown/clown.gd" id="1_ru1m8"]
-[ext_resource type="PackedScene" uid="uid://b3dm0n4n7ue0m" path="res://game_objects/projectile_arch/projectile_arch.tscn" id="2_dqbbu"]
 [ext_resource type="ArrayMesh" uid="uid://caohwddmrtua3" path="res://game_objects/clown/Funny_Clown_Man.obj" id="2_lgt7w"]
+[ext_resource type="PackedScene" uid="uid://c08qm67yeqe3j" path="res://game_objects/juggling_arch/projectile_arch.tscn" id="3_lgt7w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dqbbu"]
 
@@ -18,5 +18,5 @@ shape = SubResource("CapsuleShape3D_dqbbu")
 transform = Transform3D(0.110341, 0, 0, 0, 0.110341, 0, 0, 0, 0.110341, 0, -0.0609903, 0)
 mesh = ExtResource("2_lgt7w")
 
-[node name="ProjectileArch" parent="." instance=ExtResource("2_dqbbu")]
-transform = Transform3D(0.594784, 0, 0, 0, 1.03462, 0, 0, 0, 2.32182, 0, 1.07644, 0.435691)
+[node name="ProjectileArch" parent="." instance=ExtResource("3_lgt7w")]
+transform = Transform3D(0.688124, 0, 0, 0, 1.12969, 0, 0, 0, 0.872359, 0, 1.0324, 0.246409)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkkyo8e62itv"]
+[gd_scene load_steps=11 format=3 uid="uid://dkkyo8e62itv"]
 
 [ext_resource type="Script" path="res://game_objects/thown_object/thrown_object.gd" id="1_6y6vu"]
 [ext_resource type="Script" path="res://game_objects/thown_object/up_throw.gd" id="2_6y6vu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://game_objects/thown_object/fall_down.gd" id="3_cxh5h"]
 [ext_resource type="Script" path="res://game_objects/thown_object/flash_warning.gd" id="5_cxh5h"]
 [ext_resource type="Script" path="res://game_objects/thown_object/go_down.gd" id="6_7h14k"]
+[ext_resource type="Script" path="res://game_objects/thown_object/ball_falling.gd" id="7_om41v"]
 
 [sub_resource type="Curve3D" id="Curve3D_vxyq1"]
 _data = {
@@ -15,6 +16,8 @@ _data = {
 point_count = 2
 
 [sub_resource type="SphereMesh" id="SphereMesh_6y6vu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7h14k"]
 
 [node name="Thrown Object" type="Node3D"]
 script = ExtResource("1_6y6vu")
@@ -42,11 +45,23 @@ transparency = 1.0
 flip_v = true
 texture = ExtResource("3_24u0a")
 script = ExtResource("5_cxh5h")
+duration = 2500
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Down"]
 transform = Transform3D(-4.37114e-08, 0.999968, -4.371e-08, 0, -4.371e-08, -0.999968, -1, -4.371e-08, 1.91062e-15, 0, 0, 0)
 script = ExtResource("6_7h14k")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Down/PathFollow3D"]
-transform = Transform3D(-0.236192, -0.00124138, -0.00815711, 0.000964375, 0.23102, -0.0599912, -0.00834437, 0.0618376, 0.223958, 0, 0, 0)
+[node name="Area3D" type="Area3D" parent="Down/PathFollow3D"]
+transform = Transform3D(0.147741, 0.000767353, 0.00519793, -0.000603243, -0.142805, 0.0382279, 0.00521952, -0.0382249, -0.142712, 0, -4.11848e-09, 0.0942163)
+script = ExtResource("7_om41v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Down/PathFollow3D/Area3D"]
+transform = Transform3D(1.27785, 0, 3.72529e-09, 0, 1.27785, 4.86034e-09, 1.11759e-08, -3.51138e-08, 1.27785, 0, 0, 0)
+shape = SubResource("SphereShape3D_7h14k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Down/PathFollow3D/Area3D"]
+transform = Transform3D(1, -1.39698e-09, -3.72529e-09, -9.31323e-10, 1, -2.78669e-08, 0, -6.03904e-09, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_6y6vu")
+skeleton = NodePath("../..")
+
+[connection signal="area_entered" from="Down/PathFollow3D/Area3D" to="Down/PathFollow3D/Area3D" method="_on_area_entered"]

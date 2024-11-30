@@ -35,4 +35,3 @@ func _process(delta):
 		if flash_warning_sprite.duration == 0:
 			go_down = true
 		
-	
