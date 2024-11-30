@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmn234anhyxk5"]
 
-[ext_resource type="Script" path="res://menus/crowd_meter/crowd_meter.gd" id="1_xi50a"]
+[ext_resource type="Script" path="res://game_objects/crowd_meter/crowd_meter.gd" id="1_xi50a"]
 
 [node name="CrowdMeter" type="ProgressBar"]
 anchors_preset = 15
