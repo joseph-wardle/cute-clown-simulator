@@ -4,6 +4,10 @@
 [ext_resource type="ArrayMesh" uid="uid://bhttfe2k01ynx" path="res://game_objects/curtain/curtain.obj" id="2_7dvor"]
 [ext_resource type="Texture2D" uid="uid://bbh8ebgcmh70y" path="res://game_objects/curtain/curtaincolor.png" id="3_kemt4"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrt1w"]
+transparency = 1
+albedo_texture = ExtResource("3_kemt4")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dvor"]
 albedo_texture = ExtResource("1_6eb82")
 
@@ -24,40 +28,7 @@ albedo_texture = ExtResource("1_6eb82")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4p0n"]
 albedo_color = Color(0.121794, 0.0482219, 0.0516208, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrt1w"]
-transparency = 1
-albedo_texture = ExtResource("3_kemt4")
-
 [node name="Node3D" type="Node3D"]
-
-[node name="1stbleacher" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.431869, -10.7632)
-material_override = SubResource("StandardMaterial3D_7dvor")
-mesh = SubResource("BoxMesh_kemt4")
-skeleton = NodePath("../../..")
-
-[node name="2ndbleacher" type="MeshInstance3D" parent="1stbleacher"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.2999, -4.7055)
-material_override = SubResource("StandardMaterial3D_dy4yk")
-mesh = SubResource("BoxMesh_kemt4")
-skeleton = NodePath("../../../..")
-
-[node name="3rdbleacher" type="MeshInstance3D" parent="1stbleacher"]
-transform = Transform3D(1, 0, 0, 0, -0.99863, 0.052336, 0, -0.052336, -0.99863, 0, 3.0336, -9.4276)
-material_override = SubResource("StandardMaterial3D_vr3vi")
-mesh = SubResource("BoxMesh_kemt4")
-skeleton = NodePath("../../../..")
-
-[node name="3rdbleacher2" type="MeshInstance3D" parent="1stbleacher"]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 4.71908, -14.8206)
-material_override = SubResource("StandardMaterial3D_m47om")
-mesh = SubResource("BoxMesh_kemt4")
-skeleton = NodePath("../../../..")
-
-[node name="background" type="MeshInstance3D" parent="1stbleacher"]
-transform = Transform3D(30, 0, 0, 0, -4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 6.69921, -38.6076)
-mesh = SubResource("PlaneMesh_hrt1w")
-surface_material_override/0 = SubResource("StandardMaterial3D_s4p0n")
 
 [node name="curtain" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.6, 0, 0.5, 0, -2.18557e-08, -3.844, -4.0865, 2.98334)
@@ -69,3 +40,33 @@ transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.6, 0, 0.5, 0, 2.18557e-08, 3.
 mesh = ExtResource("2_7dvor")
 skeleton = NodePath("../curtain")
 surface_material_override/0 = SubResource("StandardMaterial3D_hrt1w")
+
+[node name="1stbleacher" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.431869, -10.7632)
+material_override = SubResource("StandardMaterial3D_7dvor")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../..")
+
+[node name="2ndbleacher" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.868031, -15.4687)
+material_override = SubResource("StandardMaterial3D_dy4yk")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../..")
+
+[node name="3rdbleacher" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.99863, 0.052336, 0, -0.052336, -0.99863, 0, 2.60173, -20.1908)
+material_override = SubResource("StandardMaterial3D_vr3vi")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../..")
+
+[node name="3rdbleacher2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 4.28721, -25.5838)
+material_override = SubResource("StandardMaterial3D_m47om")
+mesh = SubResource("BoxMesh_kemt4")
+skeleton = NodePath("../../..")
+
+[node name="background" type="MeshInstance3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, -4.37114e-08, -20, 0, 1, -8.74228e-07, 0, 6.26734, -49.3708)
+mesh = SubResource("PlaneMesh_hrt1w")
+skeleton = NodePath("../1stbleacher")
+surface_material_override/0 = SubResource("StandardMaterial3D_s4p0n")
