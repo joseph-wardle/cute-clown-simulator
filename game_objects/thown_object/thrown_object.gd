@@ -38,3 +38,7 @@ func _process(delta):
 		if down_path_follow.progress_ratio == 1:
 			done = true
 		
+
+
+func _on_crowd_meter_crowd_level_changed(crowd_level: Variant) -> void:
+	pass # Replace with function body.
