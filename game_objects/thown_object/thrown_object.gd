@@ -20,7 +20,6 @@ func _ready():
 	down_path_follow = get_node("Down/PathFollow3D")
 	flash_warning_sprite = get_node("Down/FlashWarning")
 	
-	
 func _process(delta):
 	timer += delta
 	

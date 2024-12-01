@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkkyo8e62itv"]
+[gd_scene load_steps=12 format=3 uid="uid://dkkyo8e62itv"]
 
 [ext_resource type="Script" path="res://game_objects/thown_object/thrown_object.gd" id="1_6y6vu"]
 [ext_resource type="Script" path="res://game_objects/thown_object/up_throw.gd" id="2_6y6vu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://game_objects/thown_object/flash_warning.gd" id="5_cxh5h"]
 [ext_resource type="Script" path="res://game_objects/thown_object/go_down.gd" id="6_7h14k"]
 [ext_resource type="Script" path="res://game_objects/thown_object/ball_falling.gd" id="7_om41v"]
+[ext_resource type="AudioStream" uid="uid://dnd4itktwyvtd" path="res://assets/audio/sfx/sfx_itemfall.wav" id="8_148s2"]
 
 [sub_resource type="Curve3D" id="Curve3D_vxyq1"]
 _data = {
@@ -63,5 +64,8 @@ shape = SubResource("SphereShape3D_7h14k")
 transform = Transform3D(1, -1.39698e-09, -3.72529e-09, -9.31323e-10, 1, -2.78669e-08, 0, -6.03904e-09, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_6y6vu")
 skeleton = NodePath("../..")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Down/PathFollow3D"]
+stream = ExtResource("8_148s2")
 
 [connection signal="area_entered" from="Down/PathFollow3D/Area3D" to="Down/PathFollow3D/Area3D" method="_on_area_entered"]

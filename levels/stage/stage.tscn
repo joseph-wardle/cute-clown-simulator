@@ -1,13 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=16 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
+[ext_resource type="Script" path="res://levels/stage/object_thrower.gd" id="2_d266k"]
+[ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="3_d266k"]
 [ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
 [ext_resource type="Script" path="res://game_objects/audience/audience_bobbing.gd" id="6_eecbs"]
-[ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="6_w25ds"]
 [ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://game_objects/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
+[ext_resource type="Script" path="res://levels/stage/score.gd" id="8_wedoo"]
 [ext_resource type="PackedScene" uid="uid://bmal8j1p372r4" path="res://game_objects/music_controller/music_controller.tscn" id="10_s1kgm"]
+[ext_resource type="Script" path="res://levels/stage/multiplier.gd" id="10_xh8oh"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
@@ -62,8 +65,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0645, 14.4627)
 fov = 26.5
 far = 3959.4
 
-[node name="Thrown Object" parent="." instance=ExtResource("6_w25ds")]
-transform = Transform3D(0.235824, 0, 0, 0, 0.235824, 0, 0, 0, 0.235824, 0, 0, -10.7863)
+[node name="Object_Thrower" type="Node3D" parent="."]
+script = ExtResource("2_d266k")
+
+[node name="Thrown Object" parent="Object_Thrower" instance=ExtResource("3_d266k")]
+transform = Transform3D(0.310232, 0, 0, 0, 0.310232, 0, 0, 0, 0.310232, 0, -2.45174, -14.0812)
 
 [node name="Clown" parent="." instance=ExtResource("1_dkf10")]
 transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 1.07785, 0)
@@ -337,10 +343,28 @@ grow_vertical = 1
 fill_mode = 3
 show_percentage = false
 
+[node name="Score" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 12.0
+offset_right = 549.0
+offset_bottom = 52.0
+text = "Score: 0"
+script = ExtResource("8_wedoo")
+
+[node name="Multiplier" type="RichTextLabel" parent="Control"]
+offset_left = 1064.0
+offset_top = 12.0
+offset_right = 1104.0
+offset_bottom = 52.0
+script = ExtResource("10_xh8oh")
+
 [node name="MusicController" parent="." instance=ExtResource("10_s1kgm")]
 
 [connection signal="input_result" from="RhythmCounter" to="InputIndicator" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/CrowdMeter" method="_on_rhythm_counter_input_result"]
+[connection signal="input_result" from="RhythmCounter" to="Control/Score" method="_on_rhythm_counter_input_result"]
+[connection signal="input_result" from="RhythmCounter" to="Control/Multiplier" method="_on_rhythm_counter_input_result"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience2" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience3" method="_on_crowd_meter_crowd_level_changed"]
@@ -385,3 +409,4 @@ show_percentage = false
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience42" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience43" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience44" method="_on_crowd_meter_crowd_level_changed"]
+[connection signal="multiplier_changed" from="Control/Multiplier" to="Control/Score" method="_on_multiplier_multiplier_changed"]
