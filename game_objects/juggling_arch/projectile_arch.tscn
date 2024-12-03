@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c08qm67yeqe3j"]
+[gd_scene load_steps=10 format=3 uid="uid://c08qm67yeqe3j"]
 
 [ext_resource type="Script" path="res://game_objects/juggling_arch/object_spawner.gd" id="1_c1bbu"]
 [ext_resource type="Script" path="res://game_objects/juggling_arch/path_follow_3d.gd" id="1_yd8n4"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_yhfu3"]
 [ext_resource type="Script" path="res://game_objects/juggling_arch/collision_box.gd" id="3_1f7mm"]
+[ext_resource type="AudioStream" uid="uid://bwllf1epa4ly" path="res://assets/audio/sfx/sfx_applause.wav" id="5_mqttx"]
 
 [sub_resource type="Curve3D" id="Curve3D_0civc"]
 bake_interval = 0.01
@@ -29,8 +30,8 @@ script = ExtResource("1_c1bbu")
 bpm = 108.0
 
 [node name="TimeKeepingBall" type="PathFollow3D" parent="."]
-transform = Transform3D(7.09408e-08, 0.609126, 0.793014, 1.19747e-07, -0.793014, 0.609126, 1, 5.17494e-08, -1.29198e-07, -0.662539, 0.741151, 0)
-progress = 4.29317
+transform = Transform3D(-4.37114e-08, 0, -0.999951, 0, 0.999951, 0, 1, 0, -4.37093e-08, -0.0216572, 0, 0)
+progress = 0.978343
 script = ExtResource("1_yd8n4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TimeKeepingBall"]
@@ -45,5 +46,11 @@ script = ExtResource("3_1f7mm")
 transform = Transform3D(1.60095, 0, 0, 0, 1.60095, 0, 0, 0, 1.60095, -0.0290369, -0.601672, -0.00585368)
 shape = SubResource("BoxShape3D_blqsx")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D"]
+stream = ExtResource("5_mqttx")
+volume_db = -15.0
+
+[connection signal="need_progress_ratio" from="." to="TimeKeepingBall" method="_on_projectile_arch_need_progress_ratio"]
 [connection signal="timeout" from="RhythmCounter" to="TimeKeepingBall" method="_on_rhythm_counter_timeout"]
+[connection signal="send_progress_ratio" from="TimeKeepingBall" to="." method="_on_time_keeping_ball_send_progress_ratio"]
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]

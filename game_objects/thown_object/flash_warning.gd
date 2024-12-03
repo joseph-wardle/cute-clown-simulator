@@ -8,6 +8,7 @@ func flash_start():
 	if !started:
 		started = true
 		transparency = 0.5
+		$AudioStreamPlayer3D.play()
 
 
 func _process(delta):
@@ -15,7 +16,6 @@ func _process(delta):
 		flash_start()
 		#if the flash warning is on we are going to modify the transparency
 		if duration > 0: #if the timer is still going
-			print(transparency)
 			#figure out if you need to go up or down in the flash
 			if transparency <= 0.5:
 				increasing = true
@@ -24,9 +24,9 @@ func _process(delta):
 			
 			#then go up or down
 			if increasing:
-				transparency += delta
+				transparency += delta * 2
 			else:
-				transparency -= delta
+				transparency -= delta * 2
 			
 			#then lower the timer
 			duration -= 10
