@@ -30,8 +30,8 @@ script = ExtResource("1_c1bbu")
 bpm = 108.0
 
 [node name="TimeKeepingBall" type="PathFollow3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -0.999951, 0, 0.999951, 0, 1, 0, -4.37093e-08, -0.0216572, 0, 0)
-progress = 0.978343
+transform = Transform3D(7.72166e-08, 0.383236, 0.923598, -8.07474e-08, -0.923598, 0.383236, 1, -1.0417e-07, -4.03717e-08, -0.420064, 0.899168, 0)
+progress = 4.00167
 script = ExtResource("1_yd8n4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TimeKeepingBall"]
