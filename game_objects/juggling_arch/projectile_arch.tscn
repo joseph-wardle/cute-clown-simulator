@@ -1,34 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://c08qm67yeqe3j"]
+[gd_scene load_steps=9 format=3 uid="uid://c08qm67yeqe3j"]
 
 [ext_resource type="Script" path="res://game_objects/juggling_arch/object_spawner.gd" id="1_c1bbu"]
 [ext_resource type="Script" path="res://game_objects/juggling_arch/path_follow_3d.gd" id="1_yd8n4"]
+[ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_yhfu3"]
 [ext_resource type="Script" path="res://game_objects/juggling_arch/collision_box.gd" id="3_1f7mm"]
 
 [sub_resource type="Curve3D" id="Curve3D_0civc"]
 bake_interval = 0.01
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0.966, 0.259, 0, 0, 0, 0, 0, 0, 0, 0.866, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.707, 0.707, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.866, 0, 0, 0, 0, 0, 0, 0, 0.259, 0.965, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -0.259, 0.966, 0, 0, 0, 0, 0, 0, 0, -0.5, 0.866, 0, 0, 0, 0, 0, 0, 0, -0.707, 0.707, 0, 0, 0, 0, 0, 0, 0, -0.866, 0.5, 0, 0, 0, 0, 0, 0, 0, -0.966, 0.259, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0.966, 0.259, 0, 0, 0, 0, 0, 0, 0, 0.866, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.707, 0.707, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.866, 0, 0, 0, 0, 0, 0, 0, 0.259, 0.965, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -0.259, 0.966, 0, 0, 0, 0, 0, 0, 0, -0.5, 0.866, 0, 0, 0, 0, 0, 0, 0, -0.707, 0.707, 0, 0, 0, 0, 0, 0, 0, -0.866, 0.5, 0, 0, 0, 0, 0, 0, 0, -0.966, 0.259, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 14
 
 [sub_resource type="SphereMesh" id="SphereMesh_yd8n4"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1f7mm"]
+albedo_color = Color(1, 0.984314, 0, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_blqsx"]
 
 [node name="ProjectileArch" type="Path3D"]
-transform = Transform3D(5.04356, 0, 0, 0, 5.04356, 0, 0, 0, 5.04356, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 10, 0, 0, 0, 5.044, 0, 0, 0)
 curve = SubResource("Curve3D_0civc")
 script = ExtResource("1_c1bbu")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(6.93767e-08, 0.379962, 0.924959, -1.49012e-08, 0.924959, -0.379962, -1, 1.25776e-08, 6.98325e-08, 0.48669, 0.871468, 0)
-progress = 1.0585
+[node name="RhythmCounter" parent="." instance=ExtResource("2_yhfu3")]
+bpm = 108.0
+
+[node name="TimeKeepingBall" type="PathFollow3D" parent="."]
+transform = Transform3D(7.09408e-08, 0.609126, 0.793014, 1.19747e-07, -0.793014, 0.609126, 1, 5.17494e-08, -1.29198e-07, -0.662539, 0.741151, 0)
+progress = 4.29317
 script = ExtResource("1_yd8n4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TimeKeepingBall"]
 transform = Transform3D(-0.236192, -0.00124138, -0.00815711, 0.000964375, 0.23102, -0.0599912, -0.00834437, 0.0618376, 0.223958, 0, 0, 0)
 mesh = SubResource("SphereMesh_yd8n4")
+surface_material_override/0 = SubResource("StandardMaterial3D_1f7mm")
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("3_1f7mm")
@@ -37,4 +45,5 @@ script = ExtResource("3_1f7mm")
 transform = Transform3D(1.60095, 0, 0, 0, 1.60095, 0, 0, 0, 1.60095, -0.0290369, -0.601672, -0.00585368)
 shape = SubResource("BoxShape3D_blqsx")
 
+[connection signal="timeout" from="RhythmCounter" to="TimeKeepingBall" method="_on_rhythm_counter_timeout"]
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
