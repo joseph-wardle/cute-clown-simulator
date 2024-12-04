@@ -1,11 +1,12 @@
 extends Path3D
 
-var timer = 0
-var spawnTime = 3
+var num_of_balls = 1
 var current_ball = 1
-var ball_ratio = 2
 var timer_keeping_ball_ratio = 1
+var ball_ratio = 2
+
 signal need_progress_ratio()
+signal number_of_balls_changes(num_of_balls: int)
 
 func calculate_pos() -> float:
 	if(current_ball % 2 != 0):
@@ -15,7 +16,6 @@ func calculate_pos() -> float:
 		if(distance < 0):
 			distance = 1 - distance
 		current_ball +=1
-		print("Time keeping ball", timer_keeping_ball_ratio, "new ball", distance)
 		return distance
 	elif(current_ball % 2 == 0):
 		if(current_ball == ball_ratio):
@@ -43,6 +43,8 @@ func add_object():
 	print(new_progress_ratio)
 	follower.this_progress_ratio = new_progress_ratio
 	add_child(follower)
+	num_of_balls += 1
+	number_of_balls_changes.emit(num_of_balls)
 
 
 func _on_time_keeping_ball_send_progress_ratio(curr_progress_ratio: Variant) -> void:

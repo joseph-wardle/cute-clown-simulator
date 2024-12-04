@@ -125,6 +125,45 @@ albedo_texture = ExtResource("19_1qtcg")
 
 [node name="Stage" type="Node3D"]
 
+[node name="Start Game" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_oreq5")
+
+[node name="Label" type="Label" parent="Start Game"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 98.0
+offset_right = 880.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 100
+text = "CUTE CLOWN SIMULATOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="Start Game"]
+process_mode = 2
+layout_mode = 0
+offset_left = 466.0
+offset_top = 301.0
+offset_right = 717.0
+offset_bottom = 367.0
+theme_override_font_sizes/font_size = 30
+text = "START GAME"
+
+[node name="Quit" type="Button" parent="Start Game"]
+process_mode = 2
+layout_mode = 0
+offset_left = 465.0
+offset_top = 394.0
+offset_right = 713.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 30
+text = "CREDITS"
+
 [node name="LevelGeometry" type="Node3D" parent="."]
 
 [node name="Platform" type="StaticBody3D" parent="LevelGeometry"]
@@ -536,6 +575,7 @@ text = "RETRY"
 
 [node name="Quit" type="Button" parent="Game Over"]
 process_mode = 2
+layout_mode = 0
 offset_left = 465.0
 offset_top = 394.0
 offset_right = 713.0
@@ -557,6 +597,9 @@ transform = Transform3D(0.542563, 0, 0, 0, 0.542563, 0, 0, 0, 0.542563, 13.6675,
 transform = Transform3D(16.3854, 0, 0, 0, 16.3854, 0, 0, 0, 16.3854, 0, 0, 0)
 shape = SubResource("BoxShape3D_q242p")
 
+[connection signal="pressed" from="Start Game/Retry" to="Start Game" method="_on_retry_pressed"]
+[connection signal="pressed" from="Start Game/Quit" to="Start Game" method="_on_quit_pressed"]
+[connection signal="level_changed" from="Clown/Clown" to="MusicController" method="_on_clown_level_changed"]
 [connection signal="input_result" from="RhythmCounter" to="InputIndicator" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/CrowdMeter" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/Score" method="_on_rhythm_counter_input_result"]
@@ -612,3 +655,5 @@ shape = SubResource("BoxShape3D_q242p")
 [connection signal="pressed" from="Game Over/Quit" to="Game Over" method="_on_quit_pressed"]
 [connection signal="area_entered" from="Bounding_Left" to="Control/CrowdMeter" method="_on_bounding_left_area_entered"]
 [connection signal="area_entered" from="Bounding_Right" to="Control/CrowdMeter" method="_on_bounding_right_area_entered"]
+
+[editable path="Clown"]

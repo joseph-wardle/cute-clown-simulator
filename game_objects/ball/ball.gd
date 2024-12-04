@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var max_lean_angle := 50.0
-@export var gravity_strength := 100.0
+@export var gravity_strength := 30.0
 @export var input_sensitivity := 100.0
 @export var entropy_strength := 20.0
 @export var speed_multiplier := 0.2
