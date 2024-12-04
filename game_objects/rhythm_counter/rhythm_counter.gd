@@ -69,3 +69,31 @@ func _on_timeout() -> void:
 	emit_signal("beat")
 	last_beat_time = Time.get_ticks_msec()
 	print("BEAT")
+
+
+func _on_clown_level_changed(level: int) -> void:
+	match level:
+		2:
+			perfect_window = 100.0 
+			good_window = 200.0
+			ok_window = 225.0
+			bpm = 126
+			_update_half_windows()
+		3:
+			perfect_window = 75.0 
+			good_window = 100.0
+			ok_window = 175.0
+			bpm = 141
+			_update_half_windows()
+		4:
+			perfect_window = 50.0 
+			good_window = 75.0
+			ok_window = 125.0
+			bpm = 161
+			_update_half_windows()
+		5:
+			perfect_window = 35.0
+			good_window = 40.0
+			ok_window = 100.0
+			bpm = 189
+			_update_half_windows()

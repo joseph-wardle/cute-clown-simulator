@@ -599,6 +599,7 @@ shape = SubResource("BoxShape3D_q242p")
 
 [connection signal="pressed" from="Start Game/Retry" to="Start Game" method="_on_retry_pressed"]
 [connection signal="pressed" from="Start Game/Quit" to="Start Game" method="_on_quit_pressed"]
+[connection signal="level_changed" from="Clown/Clown" to="RhythmCounter" method="_on_clown_level_changed"]
 [connection signal="level_changed" from="Clown/Clown" to="MusicController" method="_on_clown_level_changed"]
 [connection signal="input_result" from="RhythmCounter" to="InputIndicator" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/CrowdMeter" method="_on_rhythm_counter_input_result"]

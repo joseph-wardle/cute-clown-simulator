@@ -21,9 +21,10 @@ mesh = ExtResource("2_lgt7w")
 transform = Transform3D(0.688124, 0, 0, 0, 1.12969, 0, 0, 0, 0.872359, 0, 1.5, 0.246)
 
 [node name="TimeKeepingBall" parent="ProjectileArch" index="1"]
-transform = Transform3D(-4.37114e-08, 0, -0.999951, 0, 0.999951, 0, 1, 0, -4.37092e-08, 0.537185, 0, 0)
-progress = 1.53718
+transform = Transform3D(1.13042e-07, 0.793012, 0.609125, -5.3254e-08, -0.609125, 0.793012, 1, -1.22082e-07, -2.66257e-08, -0.719296, 0.690992, 0)
+progress = 4.36955
 
+[connection signal="level_changed" from="." to="ProjectileArch/RhythmCounter" method="_on_clown_level_changed"]
 [connection signal="number_of_balls_changes" from="ProjectileArch" to="." method="_on_projectile_arch_number_of_balls_changes"]
 
 [editable path="ProjectileArch"]
