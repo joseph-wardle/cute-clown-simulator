@@ -6,6 +6,7 @@ extends Sprite3D
 @export var perfect : Texture2D
 
 
+
 func _on_rhythm_counter_input_result(input_type: int) -> void:
 	match input_type:
 		3:
@@ -16,5 +17,8 @@ func _on_rhythm_counter_input_result(input_type: int) -> void:
 			texture = good
 		0:
 			texture = perfect
-	
 	$AnimationPlayer.play("flash")
+
+
+func _on_music_controller_is_intro(intro_bool: Variant) -> void:
+	visible = !intro_bool

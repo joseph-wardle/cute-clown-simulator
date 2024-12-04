@@ -11,18 +11,20 @@ var level4_loop: AudioStream = preload("res://assets/audio/music/mus_lv4-loop.wa
 var finale_intro: AudioStream = preload("res://assets/audio/music/mus_finale-intro.wav")
 var finale_loop: AudioStream = preload("res://assets/audio/music/mus_finale.wav")
 
+signal is_intro(intro_bool)
 
 func _ready():
 	$IntroPlayer.stream = level1_intro
+	is_intro.emit(true)
 	$IntroPlayer.play()
 	$IntroPlayer.connect("finished", self._on_intro_finished)
 	
 	$LoopPlayer.stream = level1_loop
 	$LoopPlayer.connect("finished", self._on_loop_finished)
 	
-	
 func _on_intro_finished():
 	$IntroPlayer.stream = null
+	is_intro.emit(false)
 	$LoopPlayer.play()
 	
 	
@@ -44,6 +46,7 @@ func _on_clown_level_changed(level: int) -> void:
 		5:
 			$IntroPlayer.stream = finale_intro
 			$LoopPlayer.stream = finale_loop
+	is_intro.emit(true)
 	$IntroPlayer.play()
 	$IntroPlayer.connect("finished", self._on_intro_finished)
 	$LoopPlayer.connect("finished", self._on_loop_finished)

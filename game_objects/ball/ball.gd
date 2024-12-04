@@ -45,3 +45,7 @@ func check_for_fall() -> void:
 		
 func update_visuals() -> void:
 	$Clown.rotation_degrees.z = lean_angle
+
+
+func _on_projectile_arch_number_of_balls_changes(num_of_balls: int) -> void:
+	gravity_strength += 2

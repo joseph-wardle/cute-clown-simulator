@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1alcfb2rymg0"]
+[gd_scene load_steps=6 format=3 uid="uid://d1alcfb2rymg0"]
 
 [ext_resource type="Script" path="res://game_objects/clown/clown.gd" id="1_ru1m8"]
 [ext_resource type="ArrayMesh" uid="uid://caohwddmrtua3" path="res://game_objects/clown/Funny_Clown_Man.obj" id="2_lgt7w"]
 [ext_resource type="PackedScene" uid="uid://c08qm67yeqe3j" path="res://game_objects/juggling_arch/projectile_arch.tscn" id="3_lgt7w"]
+[ext_resource type="Script" path="res://game_objects/clown/time_keeping_ball.gd" id="4_qlgci"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dqbbu"]
 
@@ -21,9 +22,13 @@ mesh = ExtResource("2_lgt7w")
 transform = Transform3D(0.688124, 0, 0, 0, 1.12969, 0, 0, 0, 0.872359, 0, 1.5, 0.246)
 
 [node name="TimeKeepingBall" parent="ProjectileArch" index="1"]
-transform = Transform3D(1.13042e-07, 0.793012, 0.609125, -5.3254e-08, -0.609125, 0.793012, 1, -1.22082e-07, -2.66257e-08, -0.719296, 0.690992, 0)
-progress = 4.36955
+transform = Transform3D(7.09408e-08, 0.609123, 0.793009, 1.19747e-07, -0.793009, 0.609123, 1, 5.17491e-08, -1.29198e-07, -0.576343, 0.80736, 0)
+progress = 4.1845
 
+[node name="MeshInstance3D" parent="ProjectileArch/TimeKeepingBall" index="0"]
+script = ExtResource("4_qlgci")
+
+[connection signal="intro_changed" from="." to="ProjectileArch/TimeKeepingBall/MeshInstance3D" method="_on_clown_intro_changed"]
 [connection signal="level_changed" from="." to="ProjectileArch/RhythmCounter" method="_on_clown_level_changed"]
 [connection signal="number_of_balls_changes" from="ProjectileArch" to="." method="_on_projectile_arch_number_of_balls_changes"]
 

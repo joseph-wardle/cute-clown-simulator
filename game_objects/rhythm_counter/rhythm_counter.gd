@@ -25,6 +25,7 @@ var perfect_half_window: float
 var good_half_window: float
 var ok_half_window: float
 var delta : float
+var intro = true
 
 func _ready() -> void:
 	_update_half_windows()
@@ -38,7 +39,7 @@ func _update_half_windows() -> void:
 
 
 func _input(event):
-	if event.is_action_pressed("beat"):
+	if event.is_action_pressed("beat") && intro == false:
 		var input_time := Time.get_ticks_msec()
 		delta = _calculate_delta(input_time)
 		var result := _get_input_result(delta)
@@ -68,7 +69,6 @@ func _get_input_result(delta: float) -> InputType:
 func _on_timeout() -> void:
 	emit_signal("beat")
 	last_beat_time = Time.get_ticks_msec()
-	print("BEAT")
 
 
 func _on_clown_level_changed(level: int) -> void:
@@ -97,3 +97,7 @@ func _on_clown_level_changed(level: int) -> void:
 			ok_window = 100.0
 			bpm = 189
 			_update_half_windows()
+
+
+func _on_music_controller_is_intro(intro_bool: Variant) -> void:
+	intro = intro_bool
