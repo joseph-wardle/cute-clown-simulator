@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://wvkwyl3hcce8"]
+[gd_scene load_steps=6 format=3 uid="uid://wvkwyl3hcce8"]
 
 [ext_resource type="Script" path="res://game_objects/ball/ball.gd" id="1_oggn1"]
 [ext_resource type="PackedScene" uid="uid://d1alcfb2rymg0" path="res://game_objects/clown/clown.tscn" id="2_fvkfu"]
@@ -6,6 +6,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_fvkfu"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_o70nm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvkfu"]
+albedo_color = Color(1, 0, 0.0509804, 1)
 
 [node name="Ball" type="CharacterBody3D"]
 script = ExtResource("1_oggn1")
@@ -15,5 +18,6 @@ shape = SubResource("SphereShape3D_fvkfu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_o70nm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fvkfu")
 
 [node name="Clown" parent="." instance=ExtResource("2_fvkfu")]

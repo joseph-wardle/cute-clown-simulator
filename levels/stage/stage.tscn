@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=44 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ccm6be5ihf2o4" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0008_girl4.png" id="17_q242p"]
 [ext_resource type="Texture2D" uid="uid://dnh4h6xgsibq4" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0000_little4.png" id="18_oreq5"]
 [ext_resource type="Texture2D" uid="uid://dvkograk73qag" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0004_guy4.png" id="19_1qtcg"]
+[ext_resource type="Script" path="res://levels/stage/game_over.gd" id="24_oreq5"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
@@ -120,6 +121,8 @@ alpha_scissor_threshold = 0.916
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("19_1qtcg")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_q242p"]
+
 [node name="Stage" type="Node3D"]
 
 [node name="LevelGeometry" type="Node3D" parent="."]
@@ -166,6 +169,7 @@ script = ExtResource("2_d266k")
 transform = Transform3D(0.310232, 0, 0, 0, 0.310232, 0, 0, 0, 0.310232, 0, -2.45174, -14.0812)
 
 [node name="Clown" parent="." instance=ExtResource("1_dkf10")]
+process_mode = 1
 transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 1.07785, 0)
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
@@ -501,10 +505,63 @@ script = ExtResource("10_xh8oh")
 
 [node name="MusicController" parent="." instance=ExtResource("10_s1kgm")]
 
+[node name="Game Over" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_oreq5")
+
+[node name="Label" type="Label" parent="Game Over"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 98.0
+offset_right = 880.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="Game Over"]
+process_mode = 2
+layout_mode = 0
+offset_left = 466.0
+offset_top = 301.0
+offset_right = 717.0
+offset_bottom = 367.0
+theme_override_font_sizes/font_size = 30
+text = "RETRY"
+
+[node name="Quit" type="Button" parent="Game Over"]
+process_mode = 2
+offset_left = 465.0
+offset_top = 394.0
+offset_right = 713.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+
+[node name="Bounding_Left" type="Area3D" parent="."]
+transform = Transform3D(0.542563, 0, 0, 0, 0.542563, 0, 0, 0, 0.542563, -16.2983, 0, -1.10783)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bounding_Left"]
+transform = Transform3D(16.3854, 0, 0, 0, 16.3854, 0, 0, 0, 16.3854, 0, 0, 0)
+shape = SubResource("BoxShape3D_q242p")
+
+[node name="Bounding_Right" type="Area3D" parent="."]
+transform = Transform3D(0.542563, 0, 0, 0, 0.542563, 0, 0, 0, 0.542563, 13.6675, 0, -1.10783)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bounding_Right"]
+transform = Transform3D(16.3854, 0, 0, 0, 16.3854, 0, 0, 0, 16.3854, 0, 0, 0)
+shape = SubResource("BoxShape3D_q242p")
+
 [connection signal="input_result" from="RhythmCounter" to="InputIndicator" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/CrowdMeter" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/Score" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/Multiplier" method="_on_rhythm_counter_input_result"]
+[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Clown" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience2" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience3" method="_on_crowd_meter_crowd_level_changed"]
@@ -549,4 +606,9 @@ script = ExtResource("10_xh8oh")
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience42" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience43" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience44" method="_on_crowd_meter_crowd_level_changed"]
+[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Game Over" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="multiplier_changed" from="Control/Multiplier" to="Control/Score" method="_on_multiplier_multiplier_changed"]
+[connection signal="pressed" from="Game Over/Retry" to="Game Over" method="_on_retry_pressed"]
+[connection signal="pressed" from="Game Over/Quit" to="Game Over" method="_on_quit_pressed"]
+[connection signal="area_entered" from="Bounding_Left" to="Control/CrowdMeter" method="_on_bounding_left_area_entered"]
+[connection signal="area_entered" from="Bounding_Right" to="Control/CrowdMeter" method="_on_bounding_right_area_entered"]

@@ -30,3 +30,11 @@ func _process(delta: float) -> void:
 	crowd_level -= deterioration_rate * delta
 	crowd_level_changed.emit(crowd_level)
 	
+
+
+func _on_bounding_left_area_entered(area: Area3D) -> void:
+	crowd_level = 0
+
+
+func _on_bounding_right_area_entered(area: Area3D) -> void:
+	crowd_level = 0

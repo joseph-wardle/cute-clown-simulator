@@ -42,7 +42,6 @@ func add_object():
 	var new_progress_ratio = calculate_pos()
 	print(new_progress_ratio)
 	follower.this_progress_ratio = new_progress_ratio
-	print(follower.this_progress_ratio)
 	add_child(follower)
 
 
