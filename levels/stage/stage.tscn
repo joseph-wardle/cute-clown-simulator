@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=28 format=3 uid="uid://d0uwejejiswbo"]
 
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
@@ -7,11 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="3_d266k"]
 [ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
 [ext_resource type="Script" path="res://game_objects/audience/audience_bobbing.gd" id="6_eecbs"]
+[ext_resource type="Texture2D" uid="uid://dv3ibuuq8mjl1" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0003_little1.png" id="7_kqomb"]
 [ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://game_objects/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
-[ext_resource type="Texture2D" uid="uid://drnn2g37f0kt6" path="res://game_objects/audience/new_audience/little3.png" id="7_xh8oh"]
 [ext_resource type="Script" path="res://levels/stage/score.gd" id="8_wedoo"]
+[ext_resource type="Texture2D" uid="uid://diphqrfdto8mc" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0007_guy1.png" id="9_eippk"]
+[ext_resource type="Texture2D" uid="uid://doi1ukdtvj68u" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0011_girl1.png" id="10_kprrh"]
 [ext_resource type="PackedScene" uid="uid://bmal8j1p372r4" path="res://game_objects/music_controller/music_controller.tscn" id="10_s1kgm"]
 [ext_resource type="Script" path="res://levels/stage/multiplier.gd" id="10_xh8oh"]
+[ext_resource type="Texture2D" uid="uid://baogohm7s76qq" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0002_little2.png" id="11_kprrh"]
+[ext_resource type="Texture2D" uid="uid://iropa0qhvomu" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0010_girl2.png" id="11_ts47o"]
+[ext_resource type="Texture2D" uid="uid://bu7x5bdj3fhhh" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0006_guy2.png" id="13_ts47o"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
@@ -27,11 +32,42 @@ radius = 10.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_eecbs"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmuvp"]
+transparency = 2
+alpha_scissor_threshold = 0.968
+alpha_antialiasing_mode = 1
+alpha_antialiasing_edge = 0.3
+albedo_texture = ExtResource("7_kqomb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwuu7"]
+transparency = 2
+alpha_scissor_threshold = 0.94
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("9_eippk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_te3gs"]
+transparency = 2
+alpha_scissor_threshold = 0.928
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("10_kprrh")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpslq"]
 transparency = 2
 alpha_scissor_threshold = 0.896
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("7_xh8oh")
+albedo_texture = ExtResource("11_kprrh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1eun"]
+transparency = 2
+alpha_scissor_threshold = 0.946
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("11_ts47o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q242p"]
+transparency = 2
+alpha_scissor_threshold = 0.848
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("13_ts47o")
 
 [node name="Stage" type="Node3D"]
 
@@ -109,31 +145,31 @@ transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3.08622, 1.55896)
 [node name="Basic_Audience" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience2" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 2.74485, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience3" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 5.52672, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience4" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 8.25188, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience6" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 11.0113, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience7" type="MeshInstance3D" parent="Full_Audience"]
@@ -145,49 +181,49 @@ script = ExtResource("6_eecbs")
 [node name="Basic_Audience9" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -13.6468, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience10" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -10.8649, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience11" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -8.13976, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience13" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -5.38035, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience14" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -2.68233, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience5" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience8" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 2.74485, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience12" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 5.52672, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience15" type="MeshInstance3D" parent="Full_Audience"]
@@ -199,13 +235,13 @@ script = ExtResource("6_eecbs")
 [node name="Basic_Audience16" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 11.0113, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience17" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 13.7093, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience18" type="MeshInstance3D" parent="Full_Audience"]
@@ -217,13 +253,13 @@ script = ExtResource("6_eecbs")
 [node name="Basic_Audience19" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -10.8649, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience20" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -8.13976, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience21" type="MeshInstance3D" parent="Full_Audience"]
@@ -235,7 +271,7 @@ script = ExtResource("6_eecbs")
 [node name="Basic_Audience22" type="MeshInstance3D" parent="Full_Audience"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -2.68233, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
+surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience23" type="MeshInstance3D" parent="Full_Audience"]
