@@ -14,19 +14,19 @@ script = ExtResource("1_ru1m8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_dqbbu")
 
-[node name="ClownMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.110341, 0, 0, 0, 0.110341, 0, 0, 0, 0.110341, 0, 0.5, 0)
-mesh = ExtResource("2_lgt7w")
-
 [node name="ProjectileArch" parent="." instance=ExtResource("3_lgt7w")]
 transform = Transform3D(0.688124, 0, 0, 0, 1.12969, 0, 0, 0, 0.872359, 0, 1.5, 0.246)
 
 [node name="TimeKeepingBall" parent="ProjectileArch" index="1"]
-transform = Transform3D(7.09408e-08, 0.609123, 0.793009, 1.19747e-07, -0.793009, 0.609123, 1, 5.17491e-08, -1.29198e-07, -0.576343, 0.80736, 0)
-progress = 4.1845
+transform = Transform3D(-1.66233e-07, 0.991439, 0.13015, -5.0685e-08, -0.13015, 0.991439, 1, 1.58214e-07, 7.18863e-08, -0.986938, 0.0995027, 0)
+progress = 5.03204
 
 [node name="MeshInstance3D" parent="ProjectileArch/TimeKeepingBall" index="0"]
 script = ExtResource("4_qlgci")
+
+[node name="FunnyClownMan" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0.00306602, 0.0836079, -0.280869)
+mesh = ExtResource("2_lgt7w")
 
 [connection signal="intro_changed" from="." to="ProjectileArch/TimeKeepingBall/MeshInstance3D" method="_on_clown_intro_changed"]
 [connection signal="level_changed" from="." to="ProjectileArch/RhythmCounter" method="_on_clown_level_changed"]

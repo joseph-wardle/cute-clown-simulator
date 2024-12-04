@@ -40,7 +40,7 @@ func update_velocity() -> void:
 
 func check_for_fall() -> void:
 	if abs(lean_angle) >= max_lean_angle - 0.1:
-		print("CLOWN HAS FALLEN!!! REPEAT: CLOWN HAS FALLEN!!!")
+		print("")
 	
 		
 func update_visuals() -> void:

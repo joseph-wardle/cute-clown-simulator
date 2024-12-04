@@ -211,6 +211,10 @@ transform = Transform3D(0.310232, 0, 0, 0, 0.310232, 0, 0, 0, 0.310232, 0, -2.45
 process_mode = 1
 transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 1.07785, 0)
 
+[node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
+transform = Transform3D(3.23327e-08, 0.13015, 0.991441, 8.66791e-08, -0.991441, 0.13015, 1, 8.17291e-08, -4.33373e-08, -0.239083, 0.968615, 0)
+progress = 3.80709
+
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
 remote_path = NodePath("../../InputIndicator")
@@ -237,266 +241,266 @@ transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3.08622, 1.55896)
 [node name="Full_Audience" type="Node3D" parent="."]
 
 [node name="Basic_Audience" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 1.39526, -11.7062)
+transform = Transform3D(3.34143, 0, 0, 0, -1.46058e-07, -3.34143, 0, 3.34143, -1.46058e-07, 0, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience2" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 2.74485, 1.39526, -11.7062)
+transform = Transform3D(3.21049, 0, 0, 0, -1.40335e-07, -3.21049, 0, 3.21049, -1.40335e-07, 2.74485, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience3" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 5.52672, 1.39526, -11.7062)
+transform = Transform3D(3.18106, 0, 0, 0, -1.39049e-07, -3.18106, 0, 3.18106, -1.39049e-07, 5.52672, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience4" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 8.25188, 1.39526, -11.7062)
+transform = Transform3D(3.31227, 0, 0, 0, -1.44784e-07, -3.31227, 0, 3.31227, -1.44784e-07, 8.25188, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience6" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 11.0113, 1.39526, -11.7062)
+transform = Transform3D(3.30399, 0, 0, 0, -1.44422e-07, -3.30399, 0, 3.30399, -1.44422e-07, 11.0113, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience7" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 13.7093, 1.39526, -11.7062)
+transform = Transform3D(3.64367, 0, 0, 0, -1.5927e-07, -3.64367, 0, 3.64367, -1.5927e-07, 13.7093, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience9" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -13.6468, 1.39526, -11.7062)
+transform = Transform3D(2.73942, 0, 0, 0, -1.19744e-07, -2.73942, 0, 2.73942, -1.19744e-07, -13.6468, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience10" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -10.8649, 1.39526, -11.7062)
+transform = Transform3D(3.1443, 0, 0, 0, -1.37442e-07, -3.1443, 0, 3.1443, -1.37442e-07, -10.8649, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience11" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -8.13976, 1.39526, -11.7062)
+transform = Transform3D(3.18457, 0, 0, 0, -1.39202e-07, -3.18457, 0, 3.18457, -1.39202e-07, -8.13976, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience13" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -5.38035, 1.39526, -11.7062)
+transform = Transform3D(3.45814, 0, 0, 0, -8.74228e-08, -2.4951, 0, 2, -1.09064e-07, -5.38035, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience14" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -2.68233, 1.39526, -11.7062)
+transform = Transform3D(2.7062, 0, 0, 0, -1.23897e-07, -2.8608, 0, 2.83444, -1.2505e-07, -2.68233, 1.39526, -11.7062)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience5" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 2.80896, -16.6644)
+transform = Transform3D(3.35513, 0, 0, 0, -1.46658e-07, -3.35513, 0, 3.35513, -1.46658e-07, 0, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience8" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 2.74485, 2.80896, -16.6644)
+transform = Transform3D(3.15969, 0, 0, 0, -1.38115e-07, -3.15969, 0, 3.15969, -1.38115e-07, 2.74485, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience12" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 5.52672, 2.80896, -16.6644)
+transform = Transform3D(3.21892, 0, 0, 0, -1.40703e-07, -3.21892, 0, 3.21892, -1.40703e-07, 5.52672, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience15" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 8.25188, 2.80896, -16.6644)
+transform = Transform3D(3.77107, 0, 0, 0, -1.64839e-07, -3.77107, 0, 3.77107, -1.64839e-07, 8.25188, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience16" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 11.0113, 2.80896, -16.6644)
+transform = Transform3D(3.44017, 0, 0, 0, -1.50375e-07, -3.44017, 0, 3.44017, -1.50375e-07, 11.0113, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience17" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 13.7093, 2.80896, -16.6644)
+transform = Transform3D(2.86927, 0, 0, 0, -1.2542e-07, -2.86927, 0, 2.86927, -1.2542e-07, 13.7093, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience18" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -13.6468, 2.80896, -16.6644)
+transform = Transform3D(3.07264, 0, 0, 0, -1.34309e-07, -3.07264, 0, 3.07264, -1.34309e-07, -13.6468, 2.80896, -16.6644)
 material_override = SubResource("StandardMaterial3D_oreq5")
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_1qtcg")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience19" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -10.8649, 2.80896, -16.6644)
+transform = Transform3D(3.26867, 0, 0, 0, -1.42878e-07, -3.26867, 0, 3.26867, -1.42878e-07, -10.8649, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience20" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -8.13976, 2.80896, -16.6644)
+transform = Transform3D(3.05076, 0, 0, 0, -1.33353e-07, -3.05076, 0, 3.05076, -1.33353e-07, -8.13976, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience21" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -5.38035, 2.80896, -16.6644)
+transform = Transform3D(3.24367, 0, 0, 0, -1.41785e-07, -3.24367, 0, 3.24367, -1.41785e-07, -5.38035, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience22" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -2.68233, 2.80896, -16.6644)
+transform = Transform3D(3.15673, 0, 0, 0, -1.37985e-07, -3.15673, 0, 3.15673, -1.37985e-07, -2.68233, 2.80896, -16.6644)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience23" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 4.21646, -22.1527)
+transform = Transform3D(3.26581, 0, 0, 0, -1.42753e-07, -3.26581, 0, 3.26581, -1.42753e-07, 0, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience24" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 2.74485, 4.21646, -22.1527)
+transform = Transform3D(3.19207, 0, 0, 0, -1.3953e-07, -3.19207, 0, 3.19207, -1.3953e-07, 2.74485, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_71nm2")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience25" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 5.52672, 4.21646, -22.1527)
+transform = Transform3D(3.38877, 0, 0, 0, -1.48128e-07, -3.38877, 0, 3.38877, -1.48128e-07, 5.52672, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience26" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 8.25188, 4.21646, -22.1527)
+transform = Transform3D(3.45867, 0, 0, 0, -1.51183e-07, -3.45867, 0, 3.45867, -1.51183e-07, 8.25188, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience27" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 11.0113, 4.21646, -22.1527)
+transform = Transform3D(3.04557, 0, 0, 0, -1.33126e-07, -3.04557, 0, 3.04557, -1.33126e-07, 11.0113, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_71nm2")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience28" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 13.7093, 4.21646, -22.1527)
+transform = Transform3D(2.98478, 0, 0, 0, -1.30469e-07, -2.98478, 0, 2.98478, -1.30469e-07, 13.7093, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience29" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -13.6468, 4.21646, -22.1527)
+transform = Transform3D(3.78039, 0, 0, 0, -1.65246e-07, -3.78039, 0, 3.78039, -1.65246e-07, -13.6468, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience30" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -10.8649, 4.21646, -22.1527)
+transform = Transform3D(2.99536, 0, 0, 0, -1.30931e-07, -2.99536, 0, 2.99536, -1.30931e-07, -10.8649, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience31" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -8.13976, 4.21646, -22.1527)
+transform = Transform3D(3.80356, 0, 0, 0, -1.66259e-07, -3.80356, 0, 3.80356, -1.66259e-07, -8.13976, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience32" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -5.38035, 4.21646, -22.1527)
+transform = Transform3D(3.07295, 0, 0, 0, -1.34323e-07, -3.07295, 0, 3.07295, -1.34323e-07, -5.38035, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_71nm2")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience33" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -2.68233, 4.21646, -22.1527)
+transform = Transform3D(2.96896, 0, 0, 0, -1.29777e-07, -2.96896, 0, 2.96896, -1.29777e-07, -2.68233, 4.21646, -22.1527)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience34" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 5.86668, -27.1209)
+transform = Transform3D(2.96503, 0, 0, 0, -1.29606e-07, -2.96503, 0, 2.96503, -1.29606e-07, 0, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience35" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 2.74485, 5.86668, -27.1209)
+transform = Transform3D(2.8973, 0, 0, 0, -1.26645e-07, -2.8973, 0, 2.8973, -1.26645e-07, 2.74485, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qwrpd")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience36" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 5.52672, 5.86668, -27.1209)
+transform = Transform3D(2.66651, 0, 0, 0, -1.16557e-07, -2.66651, 0, 2.66651, -1.16557e-07, 5.52672, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_rh63e")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience37" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 8.25188, 5.86668, -27.1209)
+transform = Transform3D(2.71096, 0, 0, 0, -1.185e-07, -2.71096, 0, 2.71096, -1.185e-07, 8.25188, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience38" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 11.0113, 5.86668, -27.1209)
+transform = Transform3D(2.8623, 0, 0, 0, -1.25115e-07, -2.8623, 0, 2.8623, -1.25115e-07, 11.0113, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qwrpd")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience39" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 13.7093, 5.86668, -27.1209)
+transform = Transform3D(2.74292, 0, 0, 0, -1.19897e-07, -2.74292, 0, 2.74292, -1.19897e-07, 13.7093, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience40" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -13.6468, 5.86668, -27.1209)
+transform = Transform3D(3.44956, 0, 0, 0, -1.50785e-07, -3.44956, 0, 3.44956, -1.50785e-07, -13.6468, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience41" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -10.8649, 5.86668, -27.1209)
+transform = Transform3D(2.94915, 0, 0, 0, -1.28912e-07, -2.94915, 0, 2.94915, -1.28912e-07, -10.8649, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_rh63e")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience42" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -8.13976, 5.86668, -27.1209)
+transform = Transform3D(2.888, 0, 0, 0, -1.26238e-07, -2.888, 0, 2.888, -1.26238e-07, -8.13976, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qwrpd")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience43" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -5.38035, 5.86668, -27.1209)
+transform = Transform3D(2.66674, 0, 0, 0, -1.16567e-07, -2.66674, 0, 2.66674, -1.16567e-07, -5.38035, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
 script = ExtResource("6_eecbs")
 
 [node name="Basic_Audience44" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -2.68233, 5.86668, -27.1209)
+transform = Transform3D(2.86192, 0, 0, 0, -1.25099e-07, -2.86192, 0, 2.86192, -1.25099e-07, -2.68233, 5.86668, -27.1209)
 mesh = SubResource("PlaneMesh_eecbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_rh63e")
 script = ExtResource("6_eecbs")
@@ -662,3 +666,5 @@ shape = SubResource("BoxShape3D_q242p")
 [connection signal="area_entered" from="Bounding_Right" to="Control/CrowdMeter" method="_on_bounding_right_area_entered"]
 
 [editable path="Clown"]
+[editable path="Clown/Clown"]
+[editable path="Clown/Clown/ProjectileArch"]
