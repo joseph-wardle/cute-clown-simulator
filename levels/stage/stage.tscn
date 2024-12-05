@@ -1,5 +1,6 @@
-[gd_scene load_steps=44 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=46 format=3 uid="uid://d0uwejejiswbo"]
 
+[ext_resource type="Script" path="res://levels/stage/start_game.gd" id="1_1qtcg"]
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="3_d266k"]
 [ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
 [ext_resource type="Script" path="res://game_objects/audience/audience_bobbing.gd" id="6_eecbs"]
+[ext_resource type="Script" path="res://levels/stage/animation_player.gd" id="6_udfgr"]
 [ext_resource type="Texture2D" uid="uid://dv3ibuuq8mjl1" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0003_little1.png" id="7_kqomb"]
 [ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://game_objects/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
 [ext_resource type="Script" path="res://levels/stage/score.gd" id="8_wedoo"]
@@ -131,38 +133,30 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("24_oreq5")
+script = ExtResource("1_1qtcg")
 
 [node name="Label" type="Label" parent="Start Game"]
 layout_mode = 0
-offset_left = 307.0
-offset_top = 98.0
-offset_right = 880.0
-offset_bottom = 235.0
-theme_override_font_sizes/font_size = 100
+offset_left = -34.0
+offset_top = 7.0
+offset_right = 1209.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 70
 text = "CUTE CLOWN SIMULATOR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Retry" type="Button" parent="Start Game"]
-process_mode = 2
+[node name="Start" type="Label" parent="Start Game"]
+modulate = Color(0.929412, 1, 0, 1)
 layout_mode = 0
-offset_left = 466.0
-offset_top = 301.0
-offset_right = 717.0
-offset_bottom = 367.0
-theme_override_font_sizes/font_size = 30
-text = "START GAME"
-
-[node name="Quit" type="Button" parent="Start Game"]
-process_mode = 2
-layout_mode = 0
-offset_left = 465.0
-offset_top = 394.0
-offset_right = 713.0
-offset_bottom = 456.0
-theme_override_font_sizes/font_size = 30
-text = "CREDITS"
+offset_left = 348.0
+offset_top = 525.0
+offset_right = 790.0
+offset_bottom = 553.0
+theme_override_font_sizes/font_size = 20
+text = "PRESS SPACE TO START"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LevelGeometry" type="Node3D" parent="."]
 
@@ -182,14 +176,14 @@ shape = SubResource("CylinderShape3D_dkf10")
 [node name="LevelLights" type="Node3D" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="LevelLights"]
-transform = Transform3D(1, 0, 0, 0, 0.00256558, 0.999997, 0, -0.999997, 0.00256558, 0, 8.69997, 0)
+transform = Transform3D(1, 0, 0, 0, 0.00256558, 0.999997, 0, -0.999997, 0.00256558, 0, 8.45939, 0)
 light_energy = 30.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 20.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="LevelLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46742, 2.38729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22684, 2.38729)
 light_energy = 2.664
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="LevelLights"]
@@ -209,11 +203,59 @@ transform = Transform3D(0.310232, 0, 0, 0, 0.310232, 0, 0, 0, 0.310232, 0, -2.45
 
 [node name="Clown" parent="." instance=ExtResource("1_dkf10")]
 process_mode = 1
-transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 1.07785, 0)
+transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 0.837272, 0)
+
+[node name="GeneralSkeleton" parent="Clown/Clown/Clown Juggling/Rig/Geo1/Jnts" index="0"]
+bones/8/rotation = Quaternion(-0.864067, -0.117841, -0.243782, -0.42435)
+bones/9/rotation = Quaternion(-0.00367623, 0.127736, -0.0707201, 0.989277)
+bones/10/rotation = Quaternion(-0.831246, 0.109317, 0.484047, 0.250555)
+bones/15/rotation = Quaternion(-0.87647, 0.17928, -0.362145, 0.261744)
+bones/16/rotation = Quaternion(-0.0131477, -0.00386501, -0.212788, 0.977002)
+bones/17/position = Vector3(-0.0299915, 0.00629438, -0.00537492)
+bones/17/rotation = Quaternion(-0.975657, 0.0910763, -0.0941355, 0.175891)
+
+[node name="nurbsCircle2" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3" index="0"]
+transform = Transform3D(0.999999, -0.000654494, 0, 0.000654494, 0.999999, 0, 0, 0, 1, 0, 0.063693, 0)
+
+[node name="L_Hip_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp" index="0"]
+transform = Transform3D(0.979435, 0.0486587, -0.195804, 0.0211486, 0.940376, 0.339478, 0.200648, -0.336638, 0.920008, 0, 0, 0)
+
+[node name="L_Knee_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp" index="0"]
+transform = Transform3D(0.698327, -0.190523, 0.689957, 0.104753, 0.980749, 0.164798, -0.708073, -0.0428077, 0.704841, 0, 0, 0)
+
+[node name="L_Ankle_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp/L_Knee_ctrl/L_Ankle_grp" index="0"]
+transform = Transform3D(0.803335, 0.0643209, -0.592044, -0.0800386, 0.996792, -0.000309512, 0.590125, 0.047635, 0.805905, 2.22045e-18, -2.22045e-18, 0)
+
+[node name="L_MidFoot_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp/L_Knee_ctrl/L_Ankle_grp/L_Ankle_ctrl/L_Heel_grp/L_Heel_ctrl/L_MidFoot_grp" index="0"]
+transform = Transform3D(0.999564, 0.0295133, 0.000735331, -0.029513, 0.999564, -0.000328173, -0.000744696, 0.000306328, 0.999999, 0, -2.22045e-18, -4.44089e-18)
+
+[node name="L_SlipperPoint_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp/L_Knee_ctrl/L_Ankle_grp/L_Ankle_ctrl/L_Heel_grp/L_Heel_ctrl/L_MidFoot_grp/L_MidFoot_ctrl/L_SlipperPoint_grp" index="0"]
+transform = Transform3D(0.984579, -0.0547297, 0.166155, 0.060776, 0.997653, -0.0315218, -0.16404, 0.041134, 0.985596, 0, -2.22045e-18, -4.44089e-18)
+
+[node name="R_Hip_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp" index="0"]
+transform = Transform3D(0.961528, -0.124567, -0.244839, 0.173667, 0.966216, 0.190437, 0.212845, -0.225631, 0.950677, 0, 0, 0)
+
+[node name="R_Knee_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp" index="0"]
+transform = Transform3D(0.686141, 0.000639435, 0.727468, 0.00233806, 0.999992, -0.00308422, -0.727464, 0.00381707, 0.686135, 8.88178e-18, 0, 0)
+
+[node name="R_Ankle_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp" index="0"]
+transform = Transform3D(0.923382, 0.0140929, -0.383624, -0.0373908, 0.997876, -0.0533413, 0.382057, 0.0635984, 0.921948, 0, 0, -2.77556e-19)
+
+[node name="R_Heel_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp/R_Ankle_ctrl/R_Heel_grp" index="0"]
+transform = Transform3D(1, -0.000799267, 0, 0.000799267, 1, 0, 0, 0, 1, 8.32667e-19, 5.55111e-19, -2.22045e-18)
+
+[node name="R_MidFoot_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp/R_Ankle_ctrl/R_Heel_grp/R_Heel_ctrl/R_MidFoot_grp" index="0"]
+transform = Transform3D(0.917645, -0.397401, -0.00106346, 0.397401, 0.917645, -0.000617386, 0.00122123, 0.00014392, 0.999999, 0, 1.11022e-18, 0)
+
+[node name="R_SlipperPoint_ctrl" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp/R_Ankle_ctrl/R_Heel_grp/R_Heel_ctrl/R_MidFoot_grp/R_MidFoot_ctrl/R_SlipperPoint_grp" index="0"]
+transform = Transform3D(0.999847, 0.0136243, 0.0109618, -0.0136129, 0.999907, -0.00110789, -0.0109759, 0.000958497, 0.999939, -4.44089e-18, 2.22045e-18, 0)
+
+[node name="AnimationPlayer" parent="Clown/Clown/Clown Juggling" index="1"]
+script = ExtResource("6_udfgr")
 
 [node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
-transform = Transform3D(3.23327e-08, 0.13015, 0.991441, 8.66791e-08, -0.991441, 0.13015, 1, 8.17291e-08, -4.33373e-08, -0.239083, 0.968615, 0)
-progress = 3.80709
+transform = Transform3D(-4.37114e-08, 0, -0.999945, 0, 0.999945, 0, 1, 0, -4.3709e-08, 0.890782, 0, 0)
+progress = 1.89077
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
@@ -236,7 +278,7 @@ update_scale = false
 wait_time = 1.1
 
 [node name="InputIndicator" parent="." instance=ExtResource("5_pnnt3")]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3.08622, 1.55896)
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.84564, 1.55896)
 
 [node name="Full_Audience" type="Node3D" parent="."]
 
@@ -601,10 +643,9 @@ transform = Transform3D(0.542563, 0, 0, 0, 0.542563, 0, 0, 0, 0.542563, 13.6675,
 transform = Transform3D(16.3854, 0, 0, 0, 16.3854, 0, 0, 0, 16.3854, 0, 0, 0)
 shape = SubResource("BoxShape3D_q242p")
 
-[connection signal="pressed" from="Start Game/Retry" to="Start Game" method="_on_retry_pressed"]
-[connection signal="pressed" from="Start Game/Quit" to="Start Game" method="_on_quit_pressed"]
 [connection signal="level_changed" from="Clown/Clown" to="RhythmCounter" method="_on_clown_level_changed"]
 [connection signal="level_changed" from="Clown/Clown" to="MusicController" method="_on_clown_level_changed"]
+[connection signal="number_of_balls_changes" from="Clown/Clown/ProjectileArch" to="Clown/Clown/Clown Juggling/AnimationPlayer" method="_on_projectile_arch_number_of_balls_changes"]
 [connection signal="input_result" from="RhythmCounter" to="InputIndicator" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/CrowdMeter" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/Score" method="_on_rhythm_counter_input_result"]
@@ -667,4 +708,5 @@ shape = SubResource("BoxShape3D_q242p")
 
 [editable path="Clown"]
 [editable path="Clown/Clown"]
+[editable path="Clown/Clown/Clown Juggling"]
 [editable path="Clown/Clown/ProjectileArch"]

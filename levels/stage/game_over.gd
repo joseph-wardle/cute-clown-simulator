@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	visible = false
+	get_tree().paused = true
 
 func _on_crowd_meter_crowd_level_changed(crowd_level: Variant) -> void:
 	if(crowd_level <= 0):
@@ -10,7 +11,6 @@ func _on_crowd_meter_crowd_level_changed(crowd_level: Variant) -> void:
 
 
 func _on_retry_pressed() -> void:
-	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 

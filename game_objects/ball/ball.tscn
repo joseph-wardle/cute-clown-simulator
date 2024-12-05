@@ -21,12 +21,14 @@ mesh = SubResource("SphereMesh_o70nm")
 surface_material_override/0 = SubResource("StandardMaterial3D_fvkfu")
 
 [node name="Clown" parent="." instance=ExtResource("2_fvkfu")]
+transform = Transform3D(0.85375, 0, 0, 0, 0.85375, 0, 0, 0, 0.85375, 0, 0.275595, 0)
 
 [node name="TimeKeepingBall" parent="Clown/ProjectileArch" index="1"]
-transform = Transform3D(-1.66233e-07, -0.991441, 0.13015, 5.0685e-08, -0.13015, -0.991441, 1, -1.58214e-07, 7.18864e-08, 0.99146, 0.0650591, 0)
-progress = 2.06562
+transform = Transform3D(-4.37114e-08, 0, -0.999947, 0, 0.999947, 0, 1, 0, -4.37091e-08, -0.43182, 0, 0)
+progress = 0.568181
 
 [connection signal="number_of_balls_changes" from="Clown/ProjectileArch" to="." method="_on_projectile_arch_number_of_balls_changes"]
 
 [editable path="Clown"]
+[editable path="Clown/Clown Juggling"]
 [editable path="Clown/ProjectileArch"]

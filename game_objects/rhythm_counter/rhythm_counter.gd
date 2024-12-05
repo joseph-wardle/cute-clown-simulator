@@ -10,7 +10,7 @@ enum InputType {
 signal beat
 signal input_result(input_type: InputType)
 
-@export var perfect_window := 200.0 
+@export var perfect_window := 250.0 
 @export var good_window := 300.0
 @export var ok_window := 400.0
 
@@ -74,27 +74,27 @@ func _on_timeout() -> void:
 func _on_clown_level_changed(level: int) -> void:
 	match level:
 		2:
-			perfect_window = 100.0 
+			perfect_window = 150.0 
 			good_window = 200.0
 			ok_window = 225.0
 			bpm = 126
 			_update_half_windows()
 		3:
-			perfect_window = 75.0 
-			good_window = 100.0
+			perfect_window = 100.0 
+			good_window = 125.0
 			ok_window = 175.0
 			bpm = 141
 			_update_half_windows()
 		4:
-			perfect_window = 50.0 
-			good_window = 75.0
+			perfect_window = 75.0 
+			good_window = 100.0
 			ok_window = 125.0
 			bpm = 161
 			_update_half_windows()
 		5:
-			perfect_window = 35.0
-			good_window = 40.0
-			ok_window = 100.0
+			perfect_window = 40.0
+			good_window = 60.0
+			ok_window = 75.0
 			bpm = 189
 			_update_half_windows()
 

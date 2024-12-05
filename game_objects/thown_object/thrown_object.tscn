@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkkyo8e62itv"]
+[gd_scene load_steps=15 format=3 uid="uid://dkkyo8e62itv"]
 
 [ext_resource type="Script" path="res://game_objects/thown_object/thrown_object.gd" id="1_6y6vu"]
 [ext_resource type="Script" path="res://game_objects/thown_object/up_throw.gd" id="2_6y6vu"]
@@ -19,7 +19,13 @@ point_count = 2
 
 [sub_resource type="SphereMesh" id="SphereMesh_6y6vu"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8edi"]
+albedo_color = Color(0.641998, 0, 0.110895, 1)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_7h14k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqt8n"]
+albedo_color = Color(0.643137, 0, 0.0980392, 1)
 
 [node name="Thrown Object" type="Node3D"]
 script = ExtResource("1_6y6vu")
@@ -35,6 +41,7 @@ script = ExtResource("2_6y6vu")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Up/PathFollow3D"]
 transform = Transform3D(-0.236192, -0.00124138, -0.00815711, 0.000964375, 0.23102, -0.0599912, -0.00834437, 0.0618376, 0.223958, 0, 0, 0)
 mesh = SubResource("SphereMesh_6y6vu")
+surface_material_override/0 = SubResource("StandardMaterial3D_i8edi")
 
 [node name="Down" type="Path3D" parent="."]
 transform = Transform3D(-12.5166, 1.09424e-06, 0, -1.09424e-06, -12.5166, 0, 0, 0, 12.5166, 0, 50.6557, 45.4571)
@@ -68,6 +75,7 @@ shape = SubResource("SphereShape3D_7h14k")
 transform = Transform3D(1, -1.39698e-09, -3.72529e-09, -9.31323e-10, 1, -2.78669e-08, 0, -6.03904e-09, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_6y6vu")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_lqt8n")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Down/PathFollow3D"]
 stream = ExtResource("8_148s2")

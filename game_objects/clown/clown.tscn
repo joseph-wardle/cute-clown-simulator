@@ -1,35 +1,81 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1alcfb2rymg0"]
 
 [ext_resource type="Script" path="res://game_objects/clown/clown.gd" id="1_ru1m8"]
-[ext_resource type="ArrayMesh" uid="uid://caohwddmrtua3" path="res://game_objects/clown/Funny_Clown_Man.obj" id="2_lgt7w"]
 [ext_resource type="PackedScene" uid="uid://c08qm67yeqe3j" path="res://game_objects/juggling_arch/projectile_arch.tscn" id="3_lgt7w"]
+[ext_resource type="PackedScene" uid="uid://dpxa2sg387h67" path="res://game_objects/clown/clown_juggling.tscn" id="4_av0bu"]
 [ext_resource type="Script" path="res://game_objects/clown/time_keeping_ball.gd" id="4_qlgci"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dqbbu"]
 
 [node name="Clown" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0427979, 0)
 script = ExtResource("1_ru1m8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_dqbbu")
 
+[node name="Clown Juggling" parent="." instance=ExtResource("4_av0bu")]
+transform = Transform3D(12.6054, 0, 0, 0, 12.6054, 0, 0, 0, 12.6054, -0.00304174, 0.113434, -0.0356305)
+
+[node name="GeneralSkeleton" parent="Clown Juggling/Rig/Geo1/Jnts" index="0"]
+bones/8/rotation = Quaternion(-0.782086, -0.0135053, -0.20999, -0.586569)
+bones/9/rotation = Quaternion(-0.00907006, 0.175493, -0.118917, 0.97723)
+bones/10/rotation = Quaternion(-0.642622, -0.0114714, 0.580783, 0.499596)
+bones/15/rotation = Quaternion(-0.839232, 0.0731998, -0.383376, 0.378621)
+bones/16/rotation = Quaternion(0.0166765, 0.074474, -0.338045, 0.93803)
+bones/17/position = Vector3(-0.0288513, 0.00778586, -0.00537649)
+bones/17/rotation = Quaternion(-0.956509, -0.0252114, -0.0055033, 0.290558)
+
+[node name="nurbsCircle2" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3" index="0"]
+transform = Transform3D(0.999742, 0.0226833, 0, -0.0226833, 0.999742, 0, 0, 0, 1, 0, 0.063693, 0)
+
+[node name="L_Hip_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp" index="0"]
+transform = Transform3D(0.905938, -0.070294, -0.417534, 0.221152, 0.919478, 0.325042, 0.361065, -0.386806, 0.848536, 0, 0, 0)
+
+[node name="L_Knee_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp" index="0"]
+transform = Transform3D(0.469968, -0.196414, 0.860553, 0.0533818, 0.979468, 0.194403, -0.881068, -0.0454251, 0.470804, 0, 0, 0)
+
+[node name="L_Ankle_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp/L_Knee_ctrl/L_Ankle_grp" index="0"]
+transform = Transform3D(0.784316, 0.0768305, -0.615585, -0.0891981, 0.995957, 0.0106571, 0.613915, 0.0465504, 0.787998, 2.22045e-18, -2.22045e-18, 0)
+
+[node name="L_MidFoot_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp/L_Knee_ctrl/L_Ankle_grp/L_Ankle_ctrl/L_Heel_grp/L_Heel_ctrl/L_MidFoot_grp" index="0"]
+transform = Transform3D(0.816718, -0.569023, -0.0958333, 0.573746, 0.818495, 0.0297045, 0.0615365, -0.0792442, 0.994954, 0, -2.22045e-18, -4.44089e-18)
+
+[node name="L_SlipperPoint_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/L_Hip_grp/L_Hip_ctrl/L_Knee_grp/L_Knee_ctrl/L_Ankle_grp/L_Ankle_ctrl/L_Heel_grp/L_Heel_ctrl/L_MidFoot_grp/L_MidFoot_ctrl/L_SlipperPoint_grp" index="0"]
+transform = Transform3D(0.715508, -0.614911, -0.331559, 0.634079, 0.770838, -0.0612524, 0.293243, -0.166408, 0.941444, 0, -2.22045e-18, -4.44089e-18)
+
+[node name="R_Hip_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp" index="0"]
+transform = Transform3D(0.973447, -0.0474348, -0.223943, 0.0915894, 0.977284, 0.191121, 0.20979, -0.206557, 0.955679, 0, 0, 0)
+
+[node name="R_Knee_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp" index="0"]
+transform = Transform3D(0.739987, 0, 0.672621, 0, 1, 0, -0.67262, 0, 0.739988, 8.88178e-18, 0, 0)
+
+[node name="R_Ankle_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp" index="0"]
+transform = Transform3D(0.950944, 0.0162141, -0.308936, -0.0250532, 0.999382, -0.024666, 0.308345, 0.0311958, 0.950763, 0, 0, -2.77556e-19)
+
+[node name="R_Heel_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp/R_Ankle_ctrl/R_Heel_grp" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32667e-19, 5.55111e-19, -2.22045e-18)
+
+[node name="R_MidFoot_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp/R_Ankle_ctrl/R_Heel_grp/R_Heel_ctrl/R_MidFoot_grp" index="0"]
+transform = Transform3D(0.795273, -0.606128, -0.0122497, 0.606111, 0.795361, -0.00551005, 0.0130827, -0.00304266, 0.99991, 0, 1.11022e-18, 0)
+
+[node name="R_SlipperPoint_ctrl" parent="Clown Juggling/Rig/Controls/nurbsCircle1/group3/nurbsCircle2/R_Hip_grp/R_Hip_ctrl/R_Knee_grp/R_Knee_ctrl/R_Ankle_grp/R_Ankle_ctrl/R_Heel_grp/R_Heel_ctrl/R_MidFoot_grp/R_MidFoot_ctrl/R_SlipperPoint_grp" index="0"]
+transform = Transform3D(0.986368, -0.126018, 0.10582, 0.126437, 0.991971, 0.00277156, -0.105319, 0.0106458, 0.994381, -4.44089e-18, 2.22045e-18, 0)
+
 [node name="ProjectileArch" parent="." instance=ExtResource("3_lgt7w")]
-transform = Transform3D(0.688124, 0, 0, 0, 1.12969, 0, 0, 0, 0.872359, 0, 1.5, 0.246)
+transform = Transform3D(0.745185, 0, 0, 0, 1.12969, 0, 0, 0, 0.872359, -0.0250876, 1.5, 0.392825)
 
 [node name="TimeKeepingBall" parent="ProjectileArch" index="1"]
-transform = Transform3D(-1.66233e-07, 0.991439, 0.13015, -5.0685e-08, -0.13015, 0.991439, 1, 1.58214e-07, 7.18863e-08, -0.986938, 0.0995027, 0)
-progress = 5.03204
+transform = Transform3D(-8.72054e-08, -0.13391, 0.990933, -8.66353e-08, -0.990933, -0.13391, 1, -9.75275e-08, 7.48134e-08, 0.0190078, 0.997431, 0)
+progress = 3.54679
 
 [node name="MeshInstance3D" parent="ProjectileArch/TimeKeepingBall" index="0"]
 script = ExtResource("4_qlgci")
-
-[node name="FunnyClownMan" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0.00306602, 0.0836079, -0.280869)
-mesh = ExtResource("2_lgt7w")
 
 [connection signal="intro_changed" from="." to="ProjectileArch/TimeKeepingBall/MeshInstance3D" method="_on_clown_intro_changed"]
 [connection signal="level_changed" from="." to="ProjectileArch/RhythmCounter" method="_on_clown_level_changed"]
 [connection signal="number_of_balls_changes" from="ProjectileArch" to="." method="_on_projectile_arch_number_of_balls_changes"]
 
+[editable path="Clown Juggling"]
 [editable path="ProjectileArch"]
