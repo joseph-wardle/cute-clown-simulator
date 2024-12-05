@@ -130,17 +130,20 @@ albedo_texture = ExtResource("19_1qtcg")
 [node name="Start Game" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_1qtcg")
 
 [node name="Label" type="Label" parent="Start Game"]
-layout_mode = 0
-offset_left = -34.0
-offset_top = 7.0
-offset_right = 1209.0
-offset_bottom = 144.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.136
+offset_bottom = 96.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 70
 text = "CUTE CLOWN SIMULATOR"
 horizontal_alignment = 1
@@ -148,11 +151,14 @@ vertical_alignment = 1
 
 [node name="Start" type="Label" parent="Start Game"]
 modulate = Color(0.929412, 1, 0, 1)
-layout_mode = 0
-offset_left = 348.0
-offset_top = 525.0
-offset_right = 790.0
-offset_bottom = 553.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.69
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "PRESS SPACE TO START"
 horizontal_alignment = 1
@@ -176,14 +182,14 @@ shape = SubResource("CylinderShape3D_dkf10")
 [node name="LevelLights" type="Node3D" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="LevelLights"]
-transform = Transform3D(1, 0, 0, 0, 0.00256558, 0.999997, 0, -0.999997, 0.00256558, 0, 8.45939, 0)
+transform = Transform3D(1, 0, 0, 0, 0.00256558, 0.999997, 0, -0.999997, 0.00256558, 0, 8.39963, 0)
 light_energy = 30.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 20.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="LevelLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22684, 2.38729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16708, 2.38729)
 light_energy = 2.664
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="LevelLights"]
@@ -203,7 +209,7 @@ transform = Transform3D(0.310232, 0, 0, 0, 0.310232, 0, 0, 0, 0.310232, 0, -2.45
 
 [node name="Clown" parent="." instance=ExtResource("1_dkf10")]
 process_mode = 1
-transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 0.837272, 0)
+transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 0.777515, 0)
 
 [node name="GeneralSkeleton" parent="Clown/Clown/Clown Juggling/Rig/Geo1/Jnts" index="0"]
 bones/8/rotation = Quaternion(-0.864067, -0.117841, -0.243782, -0.42435)
@@ -254,8 +260,8 @@ transform = Transform3D(0.999847, 0.0136243, 0.0109618, -0.0136129, 0.999907, -0
 script = ExtResource("6_udfgr")
 
 [node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
-transform = Transform3D(-4.37114e-08, 0, -0.999945, 0, 0.999945, 0, 1, 0, -4.3709e-08, 0.890782, 0, 0)
-progress = 1.89077
+transform = Transform3D(1.24459e-07, 0.923587, 0.383231, -3.35052e-08, -0.383231, 0.923587, 1, -1.27789e-07, -1.67516e-08, -0.961171, 0.270637, 0)
+progress = 4.85872
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
@@ -278,7 +284,7 @@ update_scale = false
 wait_time = 1.1
 
 [node name="InputIndicator" parent="." instance=ExtResource("5_pnnt3")]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.84564, 1.55896)
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.78588, 1.55896)
 
 [node name="Full_Audience" type="Node3D" parent="."]
 
@@ -559,8 +565,8 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.061
-anchor_top = 0.5
-anchor_right = 0.129
+anchor_top = 0.475
+anchor_right = 0.118
 anchor_bottom = 0.843
 offset_left = 0.727997
 offset_top = -2.0
@@ -572,7 +578,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Score" type="RichTextLabel" parent="Control"]
-layout_mode = 0
+layout_mode = 1
 offset_left = 49.0
 offset_top = 12.0
 offset_right = 549.0
@@ -581,11 +587,19 @@ text = "Score: 0"
 script = ExtResource("8_wedoo")
 
 [node name="Multiplier" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_left = 1064.0
-offset_top = 12.0
-offset_right = 1104.0
-offset_bottom = 52.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.034
+anchor_right = 1.0
+anchor_bottom = 0.034
+offset_left = -52.4
+offset_top = -2.032
+offset_right = -12.0
+offset_bottom = 85.968
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 100
 script = ExtResource("10_xh8oh")
 
 [node name="MusicController" parent="." instance=ExtResource("10_s1kgm")]
@@ -593,17 +607,21 @@ script = ExtResource("10_xh8oh")
 [node name="Game Over" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("24_oreq5")
 
 [node name="Label" type="Label" parent="Game Over"]
-layout_mode = 0
-offset_left = 307.0
-offset_top = 98.0
-offset_right = 880.0
-offset_bottom = 235.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_right = 0.915
+anchor_bottom = 0.285
+offset_bottom = 137.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 100
 text = "GAME OVER"
 horizontal_alignment = 1
@@ -611,21 +629,35 @@ vertical_alignment = 1
 
 [node name="Retry" type="Button" parent="Game Over"]
 process_mode = 2
-layout_mode = 0
-offset_left = 466.0
-offset_top = 301.0
-offset_right = 717.0
-offset_bottom = 367.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.534
+anchor_right = 0.5
+anchor_bottom = 0.534
+offset_left = -125.5
+offset_top = -33.0
+offset_right = 125.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "RETRY"
 
 [node name="Quit" type="Button" parent="Game Over"]
 process_mode = 2
-layout_mode = 0
-offset_left = 465.0
-offset_top = 394.0
-offset_right = 713.0
-offset_bottom = 456.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.432
+anchor_top = 0.646
+anchor_right = 0.568
+anchor_bottom = 0.666
+offset_left = -40.0
+offset_top = -25.0
+offset_right = 40.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "QUIT"
 
