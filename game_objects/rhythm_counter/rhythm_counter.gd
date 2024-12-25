@@ -27,6 +27,12 @@ var ok_window_half: float
 var current_offset_ms : float
 var is_intro_active := true
 
+
+func reset_beat() -> void:
+	last_beat_time_ms = Time.get_ticks_msec()
+	emit_signal("beat")
+
+
 func _ready() -> void:
 	_refresh_window_halves()
 	bpm = 108
