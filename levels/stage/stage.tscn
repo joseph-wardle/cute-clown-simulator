@@ -1,21 +1,21 @@
 [gd_scene load_steps=46 format=3 uid="uid://d0uwejejiswbo"]
 
-[ext_resource type="Script" path="res://levels/stage/start_game.gd" id="1_1qtcg"]
+[ext_resource type="Script" uid="uid://b51ee3w580rid" path="res://levels/stage/start_game.gd" id="1_1qtcg"]
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
-[ext_resource type="Script" path="res://levels/stage/object_thrower.gd" id="2_d266k"]
+[ext_resource type="Script" uid="uid://bb8j3u1vuhu2q" path="res://levels/stage/object_thrower.gd" id="2_d266k"]
 [ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="3_d266k"]
 [ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
-[ext_resource type="Script" path="res://game_objects/audience/audience_bobbing.gd" id="6_eecbs"]
-[ext_resource type="Script" path="res://levels/stage/animation_player.gd" id="6_udfgr"]
+[ext_resource type="Script" uid="uid://bqd8hsrhhsp3" path="res://game_objects/audience/audience_bobbing.gd" id="6_eecbs"]
+[ext_resource type="Script" uid="uid://chp4ku3ggbpn4" path="res://levels/stage/animation_player.gd" id="6_udfgr"]
 [ext_resource type="Texture2D" uid="uid://dv3ibuuq8mjl1" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0003_little1.png" id="7_kqomb"]
 [ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://game_objects/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
-[ext_resource type="Script" path="res://levels/stage/score.gd" id="8_wedoo"]
+[ext_resource type="Script" uid="uid://fpsn2cw2xoh" path="res://levels/stage/score.gd" id="8_wedoo"]
 [ext_resource type="Texture2D" uid="uid://diphqrfdto8mc" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0007_guy1.png" id="9_eippk"]
 [ext_resource type="Texture2D" uid="uid://doi1ukdtvj68u" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0011_girl1.png" id="10_kprrh"]
 [ext_resource type="PackedScene" uid="uid://bmal8j1p372r4" path="res://game_objects/music_controller/music_controller.tscn" id="10_s1kgm"]
-[ext_resource type="Script" path="res://levels/stage/multiplier.gd" id="10_xh8oh"]
+[ext_resource type="Script" uid="uid://fqm17lt6o0vg" path="res://levels/stage/multiplier.gd" id="10_xh8oh"]
 [ext_resource type="Texture2D" uid="uid://baogohm7s76qq" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0002_little2.png" id="11_kprrh"]
 [ext_resource type="Texture2D" uid="uid://iropa0qhvomu" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0010_girl2.png" id="11_ts47o"]
 [ext_resource type="Texture2D" uid="uid://bu7x5bdj3fhhh" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0006_guy2.png" id="13_ts47o"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://ccm6be5ihf2o4" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0008_girl4.png" id="17_q242p"]
 [ext_resource type="Texture2D" uid="uid://dnh4h6xgsibq4" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0000_little4.png" id="18_oreq5"]
 [ext_resource type="Texture2D" uid="uid://dvkograk73qag" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0004_guy4.png" id="19_1qtcg"]
-[ext_resource type="Script" path="res://levels/stage/game_over.gd" id="24_oreq5"]
+[ext_resource type="Script" uid="uid://cjp3o1qskmwu" path="res://levels/stage/game_over.gd" id="24_oreq5"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
@@ -260,8 +260,8 @@ transform = Transform3D(0.999847, 0.0136243, 0.0109618, -0.0136129, 0.999907, -0
 script = ExtResource("6_udfgr")
 
 [node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
-transform = Transform3D(1.24459e-07, 0.923587, 0.383231, -3.35052e-08, -0.383231, 0.923587, 1, -1.27789e-07, -1.67516e-08, -0.961171, 0.270637, 0)
-progress = 4.85872
+transform = Transform3D(-4.37114e-08, 0, -0.999938, 0, 0.999938, 0, 1, 0, -4.37087e-08, 0.109256, 0, 0)
+progress = 1.10926
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)

@@ -16,88 +16,90 @@ signal input_result(input_type: InputType)
 
 @export var bpm: float:
 	get:
-		return 60.0 / wait_time if wait_time > 0 else 0.0
-	set(value):
-		wait_time = 60.0 / value if value > 0 else 0.0
+		return _calculate_bpm()
+	set(new_bpm):
+		_update_wait_time(new_bpm)
 
-var last_beat_time: float = 0.0
-var perfect_half_window: float
-var good_half_window: float
-var ok_half_window: float
-var delta : float
-var intro = true
+var last_beat_time_ms := 0.0
+var perfect_window_half: float
+var good_window_half: float
+var ok_window_half: float
+var current_offset_ms : float
+var is_intro_active := true
 
 func _ready() -> void:
-	_update_half_windows()
+	_refresh_window_halves()
 	bpm = 108
-	
-	
-func _update_half_windows() -> void:
-	perfect_half_window = perfect_window / 2
-	good_half_window = good_window / 2
-	ok_half_window = ok_window / 2
+
+
+func _calculate_bpm() -> float:
+	return 60.0 / wait_time if wait_time > 0 else 0.0
+
+
+func _update_wait_time(new_bpm: float) -> void:
+	wait_time = 60.0 / new_bpm if new_bpm > 0 else 0.0
+
+
+func _refresh_window_halves() -> void:
+	perfect_window_half = perfect_window * 0.5
+	good_window_half = good_window * 0.5
+	ok_window_half = ok_window * 0.5
 
 
 func _input(event):
-	if event.is_action_pressed("beat") && intro == false:
-		var input_time := Time.get_ticks_msec()
-		delta = _calculate_delta(input_time)
-		var result := _get_input_result(delta)
-		emit_signal("input_result", result)
-		print(result)
+	if event.is_action_pressed("beat") and not is_intro_active:
+		var input_time_ms := Time.get_ticks_msec()
+		current_offset_ms = _calculate_input_offset(input_time_ms)
+		var accuracy := _evaluate_input_accuracy(current_offset_ms)
+		emit_signal("input_result", accuracy)
 
 
-func _calculate_delta(input_time: float) -> float:
-	var beat_interval := wait_time * 1000.0 # convert to ms
-	var ms_since_last_beat := input_time - last_beat_time
-	delta = fposmod(ms_since_last_beat, beat_interval)
-	if delta > beat_interval / 2:
-		delta = beat_interval - delta
-	return delta
-	
-	
-func _get_input_result(delta: float) -> InputType:
-	if delta <= perfect_half_window:
+func _calculate_input_offset(input_time_ms: float) -> float:
+	var beat_duration_ms := wait_time * 1000.0 # convert to ms
+	var ms_elapsed_since_last_beat := input_time_ms - last_beat_time_ms
+	var offset := fposmod(ms_elapsed_since_last_beat, beat_duration_ms)
+	if offset > beat_duration_ms * 0.5:
+		offset = beat_duration_ms - offset
+	return offset
+
+
+func _evaluate_input_accuracy(delta: float) -> InputType:
+	if delta <= perfect_window_half:
 		return InputType.PERFECT
-	elif delta <= good_half_window:
+	elif delta <= good_window_half:
 		return InputType.GOOD
-	elif delta <= ok_half_window:
+	elif delta <= ok_window_half:
 		return InputType.OK
 	else:
 		return InputType.MISS
 
+
 func _on_timeout() -> void:
 	emit_signal("beat")
-	last_beat_time = Time.get_ticks_msec()
+	last_beat_time_ms = Time.get_ticks_msec()
 
 
 func _on_clown_level_changed(level: int) -> void:
 	match level:
 		2:
-			perfect_window = 150.0 
-			good_window = 200.0
-			ok_window = 225.0
-			bpm = 126
-			_update_half_windows()
+			_apply_difficulty(150.0, 200.0, 225.0, 126.0)
 		3:
-			perfect_window = 100.0 
-			good_window = 125.0
-			ok_window = 175.0
-			bpm = 141
-			_update_half_windows()
+			_apply_difficulty(100.0, 125.0, 175.0, 141.0)
 		4:
-			perfect_window = 75.0 
-			good_window = 100.0
-			ok_window = 125.0
-			bpm = 161
-			_update_half_windows()
+			_apply_difficulty(75.0, 100.0, 125.0, 161.0)
 		5:
-			perfect_window = 40.0
-			good_window = 60.0
-			ok_window = 75.0
-			bpm = 189
-			_update_half_windows()
+			_apply_difficulty(50.0, 75.0, 100.0, 189.0)
 
 
-func _on_music_controller_is_intro(intro_bool: Variant) -> void:
-	intro = intro_bool
+func _apply_difficulty(perfect: float, good: float, ok: float, new_bpm: float) -> void:
+	perfect_window = perfect
+	good_window = good
+	ok_window = ok
+	bpm = new_bpm
+	_refresh_window_halves()
+
+func _on_music_controller_is_intro(is_intro: bool) -> void:
+	is_intro_active = is_intro
+	
+
+	

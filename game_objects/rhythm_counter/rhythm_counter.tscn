@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://kqjay26lo8x8"]
 
-[ext_resource type="Script" path="res://game_objects/rhythm_counter/rhythm_counter.gd" id="1_gajxn"]
+[ext_resource type="Script" uid="uid://belfs237r5iqt" path="res://game_objects/rhythm_counter/rhythm_counter.gd" id="1_gajxn"]
 
 [node name="RhythmCounter" type="Timer"]
 autostart = true
