@@ -1,8 +1,8 @@
 extends MeshInstance3D
 
 @export var speed := 5.0
-@export var base_excitement := 5.0
-@export var max_height := 3.0
+@export var base_excitement := 2.0
+@export var max_height := 4.0
 
 var excitement := base_excitement
 var movement := 0.0
@@ -17,9 +17,10 @@ func _process(delta) -> void:
 	position.y += sin(movement) * max_height * delta
 
 
-func _on_crowd_meter_crowd_level_changed(crowd_level: Variant) -> void:
+func _on_crowd_level_changed(crowd_level: float) -> void:
 	if crowd_level > 0:
-		excitement = base_excitement + (crowd_level)
-		max_height = excitement / 100.0
+		crowd_level -= 50.0
+		excitement = base_excitement + (crowd_level / 30.0)
+		max_height = excitement / 2.0
 	else:
 		max_height = 0.0

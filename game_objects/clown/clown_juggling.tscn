@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpxa2sg387h67"]
 
-[ext_resource type="PackedScene" uid="uid://cwcese0cyxehn" path="res://game_objects/clown/Clown Juggling.fbx" id="1_wis68"]
-[ext_resource type="Texture2D" uid="uid://bdvldjov1bedo" path="res://game_objects/clown/Clown Juggling_0.png" id="2_pui05"]
+[ext_resource type="PackedScene" uid="uid://cwcese0cyxehn" path="res://assets/models/Clown Juggling.fbx" id="1_wis68"]
+[ext_resource type="Texture2D" uid="uid://bdvldjov1bedo" path="res://assets/textures/Clown Juggling_0.png" id="2_pui05"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvahq"]
 albedo_texture = ExtResource("2_pui05")

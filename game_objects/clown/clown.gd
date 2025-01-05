@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
-@export var num_of_balls_count = 1
+@export var num_of_balls_count := 1
 
 signal level_changed(level: int)
-signal intro_changed(intro)
+signal intro_changed(is_intro: bool)
 
 func _on_projectile_arch_number_of_balls_changes(num_of_balls: int) -> void:
 	num_of_balls_count = num_of_balls
@@ -20,9 +20,5 @@ func levelChange():
 		level_changed.emit(5)
 
 
-func _on_music_controller_is_intro(intro_bool: Variant) -> void:
+func _on_music_controller_is_intro(intro_bool: bool) -> void:
 	intro_changed.emit(intro_bool)
-
-
-func _on_intro_changed(intro: Variant) -> void:
-	pass # Replace with function body.

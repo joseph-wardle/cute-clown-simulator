@@ -3,15 +3,16 @@ extends ProgressBar
 @export var perfect_effect := 15
 @export var good_effect := 8
 @export var ok_effect := 5
-@export var miss_effect := -60
+@export var miss_effect := -30
 @export var deterioration_rate := 7.0
+
 @export var crowd_level := 100.0:
 	set(num):
 		crowd_level = num
 		value = crowd_level
-		
-var intro = true
-signal crowd_level_changed(crowd_level)
+
+var is_intro :=  true
+signal crowd_level_changed(crowd_level: float)
 
 func _on_rhythm_counter_input_result(input_type: int) -> void:
 	match input_type:
@@ -28,19 +29,15 @@ func _on_rhythm_counter_input_result(input_type: int) -> void:
 	
 	
 func _process(delta: float) -> void:
-	if(intro == false):
+	if(is_intro == false):
 		crowd_level -= deterioration_rate * delta
 		crowd_level_changed.emit(crowd_level)
 	
 
 
-func _on_bounding_left_area_entered(area: Area3D) -> void:
+func _on_out_of_bounds(_area: Area3D) -> void:
 	crowd_level = 0
 
 
-func _on_bounding_right_area_entered(area: Area3D) -> void:
-	crowd_level = 0
-
-
-func _on_music_controller_is_intro(intro_bool: Variant) -> void:
-	intro = intro_bool
+func _on_music_controller_is_intro(controller_is_intro: bool) -> void:
+	is_intro = controller_is_intro

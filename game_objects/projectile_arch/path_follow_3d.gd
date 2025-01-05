@@ -1,9 +1,9 @@
 @tool
 extends PathFollow3D
 
-@export var process: bool = true
-@export var speed: int = 5
+@export var process := true
+@export var speed := 5.0
 
-func _process(delta):
+func _process(delta: float) -> void:
 	if process:
 		progress += delta * speed

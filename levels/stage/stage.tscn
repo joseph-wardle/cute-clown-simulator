@@ -1,31 +1,19 @@
-[gd_scene load_steps=46 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=20 format=3 uid="uid://d0uwejejiswbo"]
 
-[ext_resource type="Script" path="res://levels/stage/start_game.gd" id="1_1qtcg"]
+[ext_resource type="Script" uid="uid://b51ee3w580rid" path="res://levels/stage/start_game.gd" id="1_1qtcg"]
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
-[ext_resource type="Script" path="res://levels/stage/object_thrower.gd" id="2_d266k"]
-[ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thown_object/thrown_object.tscn" id="3_d266k"]
+[ext_resource type="Script" uid="uid://bb8j3u1vuhu2q" path="res://levels/stage/object_thrower.gd" id="2_d266k"]
+[ext_resource type="PackedScene" uid="uid://dkkyo8e62itv" path="res://game_objects/thrown_object/thrown_object.tscn" id="3_d266k"]
+[ext_resource type="PackedScene" uid="uid://dm0g2h6i2tphr" path="res://game_objects/audience/audience.tscn" id="3_qy12w"]
 [ext_resource type="PackedScene" uid="uid://bwliioxon2evx" path="res://game_objects/input_indicator/input_indicator.tscn" id="5_pnnt3"]
-[ext_resource type="Script" path="res://game_objects/audience/audience_bobbing.gd" id="6_eecbs"]
-[ext_resource type="Script" path="res://levels/stage/animation_player.gd" id="6_udfgr"]
-[ext_resource type="Texture2D" uid="uid://dv3ibuuq8mjl1" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0003_little1.png" id="7_kqomb"]
+[ext_resource type="Script" uid="uid://chp4ku3ggbpn4" path="res://levels/stage/animation_player.gd" id="6_udfgr"]
 [ext_resource type="PackedScene" uid="uid://bmn234anhyxk5" path="res://game_objects/crowd_meter/crowd_meter.tscn" id="7_w25ds"]
-[ext_resource type="Script" path="res://levels/stage/score.gd" id="8_wedoo"]
-[ext_resource type="Texture2D" uid="uid://diphqrfdto8mc" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0007_guy1.png" id="9_eippk"]
-[ext_resource type="Texture2D" uid="uid://doi1ukdtvj68u" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0011_girl1.png" id="10_kprrh"]
+[ext_resource type="Script" uid="uid://fpsn2cw2xoh" path="res://levels/stage/score.gd" id="8_wedoo"]
 [ext_resource type="PackedScene" uid="uid://bmal8j1p372r4" path="res://game_objects/music_controller/music_controller.tscn" id="10_s1kgm"]
-[ext_resource type="Script" path="res://levels/stage/multiplier.gd" id="10_xh8oh"]
-[ext_resource type="Texture2D" uid="uid://baogohm7s76qq" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0002_little2.png" id="11_kprrh"]
-[ext_resource type="Texture2D" uid="uid://iropa0qhvomu" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0010_girl2.png" id="11_ts47o"]
-[ext_resource type="Texture2D" uid="uid://bu7x5bdj3fhhh" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0006_guy2.png" id="13_ts47o"]
-[ext_resource type="Texture2D" uid="uid://dtmlykb1exe0w" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0001_little3.png" id="14_te3gs"]
-[ext_resource type="Texture2D" uid="uid://c3f748sp7spli" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0009_girl3.png" id="15_n1eun"]
-[ext_resource type="Texture2D" uid="uid://cutc078m6kj8v" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0005_guy3.png" id="16_dmuvp"]
-[ext_resource type="Texture2D" uid="uid://ccm6be5ihf2o4" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0008_girl4.png" id="17_q242p"]
-[ext_resource type="Texture2D" uid="uid://dnh4h6xgsibq4" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0000_little4.png" id="18_oreq5"]
-[ext_resource type="Texture2D" uid="uid://dvkograk73qag" path="res://game_objects/audience/newnewaudience/newnewaudience/na_0004_guy4.png" id="19_1qtcg"]
-[ext_resource type="Script" path="res://levels/stage/game_over.gd" id="24_oreq5"]
+[ext_resource type="Script" uid="uid://fqm17lt6o0vg" path="res://levels/stage/multiplier.gd" id="10_xh8oh"]
+[ext_resource type="Script" uid="uid://cjp3o1qskmwu" path="res://levels/stage/game_over.gd" id="24_oreq5"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3r3al"]
 top_radius = 10.0
@@ -39,91 +27,14 @@ albedo_color = Color(0.538342, 0.534691, 0.403302, 1)
 height = 0.1
 radius = 10.0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_eecbs"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmuvp"]
-transparency = 2
-alpha_scissor_threshold = 0.968
-alpha_antialiasing_mode = 1
-alpha_antialiasing_edge = 0.3
-albedo_texture = ExtResource("7_kqomb")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwuu7"]
-transparency = 2
-alpha_scissor_threshold = 0.94
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("9_eippk")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_te3gs"]
-transparency = 2
-alpha_scissor_threshold = 0.928
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("10_kprrh")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpslq"]
-transparency = 2
-alpha_scissor_threshold = 0.896
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("11_kprrh")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1eun"]
-transparency = 2
-alpha_scissor_threshold = 0.946
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("11_ts47o")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q242p"]
-transparency = 2
-alpha_scissor_threshold = 0.848
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("13_ts47o")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oreq5"]
-transparency = 2
-alpha_scissor_threshold = 0.756
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("11_ts47o")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qtcg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udfgr"]
-transparency = 2
-alpha_scissor_threshold = 0.852
-alpha_antialiasing_mode = 1
-alpha_antialiasing_edge = 0.3
-albedo_texture = ExtResource("14_te3gs")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71nm2"]
-transparency = 2
-alpha_scissor_threshold = 0.9
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("15_n1eun")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trd32"]
-transparency = 2
-alpha_scissor_threshold = 0.876
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("16_dmuvp")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsr8o"]
-transparency = 2
-alpha_scissor_threshold = 0.956
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("17_q242p")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwrpd"]
-transparency = 2
-alpha_scissor_threshold = 0.892
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("18_oreq5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh63e"]
-transparency = 2
-alpha_scissor_threshold = 0.916
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("19_1qtcg")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_q242p"]
+
+[sub_resource type="Environment" id="Environment_qy12w"]
+background_mode = 1
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 100.0
 
 [node name="Stage" type="Node3D"]
 
@@ -201,6 +112,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0645, 14.4627)
 fov = 26.5
 far = 3959.4
 
+[node name="Audience" parent="." instance=ExtResource("3_qy12w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.4046)
+
 [node name="Object_Thrower" type="Node3D" parent="."]
 script = ExtResource("2_d266k")
 
@@ -212,13 +126,30 @@ process_mode = 1
 transform = Transform3D(1.57555, 0, 0, 0, 1.57555, 0, 0, 0, 1.57555, 0, 0.777515, 0)
 
 [node name="GeneralSkeleton" parent="Clown/Clown/Clown Juggling/Rig/Geo1/Jnts" index="0"]
-bones/8/rotation = Quaternion(-0.864067, -0.117841, -0.243782, -0.42435)
-bones/9/rotation = Quaternion(-0.00367623, 0.127736, -0.0707201, 0.989277)
-bones/10/rotation = Quaternion(-0.831246, 0.109317, 0.484047, 0.250555)
-bones/15/rotation = Quaternion(-0.87647, 0.17928, -0.362145, 0.261744)
-bones/16/rotation = Quaternion(-0.0131477, -0.00386501, -0.212788, 0.977002)
-bones/17/position = Vector3(-0.0299915, 0.00629438, -0.00537492)
-bones/17/rotation = Quaternion(-0.975657, 0.0910763, -0.0941355, 0.175891)
+bones/4/position = Vector3(0.0153698, 1.14216e-18, 1.94072e-17)
+bones/4/rotation = Quaternion(1.54797e-16, 0.00139009, 1.50048e-19, 0.999999)
+bones/8/rotation = Quaternion(-0.861541, -0.0344729, -0.0235205, 0.50597)
+bones/9/rotation = Quaternion(1.51209e-15, 0.13227, -1.47008e-16, 0.991214)
+bones/10/position = Vector3(0.0304811, -0.0065494, -0.000524531)
+bones/10/rotation = Quaternion(-0.626497, -0.176413, 0.148442, 0.744544)
+bones/15/rotation = Quaternion(-0.611004, 0.0208727, -0.0870042, 0.786555)
+bones/16/rotation = Quaternion(1.31541e-08, 0.0937697, -0.093288, 0.991214)
+bones/17/position = Vector3(-0.0304811, 0.00501295, -0.00424741)
+bones/17/rotation = Quaternion(-0.626497, -0.0203693, 0.229655, 0.744544)
+bones/21/position = Vector3(0.00543431, 1.1816e-13, -0.0163788)
+bones/21/rotation = Quaternion(-0.00683002, 0.99285, -0.0959701, -0.0706593)
+bones/22/rotation = Quaternion(-4.83891e-15, -0.0321755, -9.8283e-16, 0.999482)
+bones/23/rotation = Quaternion(0.76905, 0.0370085, 0.0447121, 0.636548)
+bones/24/rotation = Quaternion(0.644784, 0.232216, 0.695709, 0.215218)
+bones/25/rotation = Quaternion(0.0504768, 0.372222, 0.0202781, 0.926548)
+bones/26/rotation = Quaternion(0.965326, -0.0259412, -0.237367, 0.105498)
+bones/28/position = Vector3(0.00588096, -1.17041e-13, 0.0162238)
+bones/28/rotation = Quaternion(-0.773429, -0.00939853, 0.00566428, 0.633789)
+bones/29/rotation = Quaternion(1.01916e-10, -0.0122117, 0.0297681, 0.999482)
+bones/30/rotation = Quaternion(0.050896, 0.0199346, -0.0529371, 0.997101)
+bones/31/rotation = Quaternion(-0.518977, -0.549279, -0.366437, 0.542844)
+bones/32/rotation = Quaternion(-0.196642, 0.0585975, -0.367864, 0.906959)
+bones/33/rotation = Quaternion(0.932185, -0.329305, -0.107051, 0.105498)
 
 [node name="nurbsCircle2" parent="Clown/Clown/Clown Juggling/Rig/Controls/nurbsCircle1/group3" index="0"]
 transform = Transform3D(0.999999, -0.000654494, 0, 0.000654494, 0.999999, 0, 0, 0, 1, 0, 0.063693, 0)
@@ -260,7 +191,8 @@ transform = Transform3D(0.999847, 0.0136243, 0.0109618, -0.0136129, 0.999907, -0
 script = ExtResource("6_udfgr")
 
 [node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
-transform = Transform3D(-4.37114e-08, 0, -0.999938, 0, 0.999938, 0, 1, 0, -4.37087e-08, -1, 0, 0)
+transform = Transform3D(5.50901e-08, 0.130148, 0.99142, -8.66791e-08, -0.99142, 0.130148, 1, -9.31053e-08, -4.33364e-08, -0.112579, 0.985221, 0)
+progress = 3.67963
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
@@ -284,273 +216,6 @@ wait_time = 1.1
 
 [node name="InputIndicator" parent="." instance=ExtResource("5_pnnt3")]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.78588, 1.55896)
-
-[node name="Full_Audience" type="Node3D" parent="."]
-
-[node name="Basic_Audience" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.34143, 0, 0, 0, -1.46058e-07, -3.34143, 0, 3.34143, -1.46058e-07, 0, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience2" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.21049, 0, 0, 0, -1.40335e-07, -3.21049, 0, 3.21049, -1.40335e-07, 2.74485, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience3" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.18106, 0, 0, 0, -1.39049e-07, -3.18106, 0, 3.18106, -1.39049e-07, 5.52672, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience4" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.31227, 0, 0, 0, -1.44784e-07, -3.31227, 0, 3.31227, -1.44784e-07, 8.25188, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience6" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.30399, 0, 0, 0, -1.44422e-07, -3.30399, 0, 3.30399, -1.44422e-07, 11.0113, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience7" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.64367, 0, 0, 0, -1.5927e-07, -3.64367, 0, 3.64367, -1.5927e-07, 13.7093, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience9" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.73942, 0, 0, 0, -1.19744e-07, -2.73942, 0, 2.73942, -1.19744e-07, -13.6468, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience10" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.1443, 0, 0, 0, -1.37442e-07, -3.1443, 0, 3.1443, -1.37442e-07, -10.8649, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_dmuvp")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience11" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.18457, 0, 0, 0, -1.39202e-07, -3.18457, 0, 3.18457, -1.39202e-07, -8.13976, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience13" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.45814, 0, 0, 0, -8.74228e-08, -2.4951, 0, 2, -1.09064e-07, -5.38035, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_uwuu7")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience14" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.7062, 0, 0, 0, -1.23897e-07, -2.8608, 0, 2.83444, -1.2505e-07, -2.68233, 1.39526, -11.7062)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_te3gs")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience5" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.35513, 0, 0, 0, -1.46658e-07, -3.35513, 0, 3.35513, -1.46658e-07, 0, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience8" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.15969, 0, 0, 0, -1.38115e-07, -3.15969, 0, 3.15969, -1.38115e-07, 2.74485, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience12" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.21892, 0, 0, 0, -1.40703e-07, -3.21892, 0, 3.21892, -1.40703e-07, 5.52672, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience15" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.77107, 0, 0, 0, -1.64839e-07, -3.77107, 0, 3.77107, -1.64839e-07, 8.25188, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience16" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.44017, 0, 0, 0, -1.50375e-07, -3.44017, 0, 3.44017, -1.50375e-07, 11.0113, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience17" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.86927, 0, 0, 0, -1.2542e-07, -2.86927, 0, 2.86927, -1.2542e-07, 13.7093, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience18" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.07264, 0, 0, 0, -1.34309e-07, -3.07264, 0, 3.07264, -1.34309e-07, -13.6468, 2.80896, -16.6644)
-material_override = SubResource("StandardMaterial3D_oreq5")
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_1qtcg")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience19" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.26867, 0, 0, 0, -1.42878e-07, -3.26867, 0, 3.26867, -1.42878e-07, -10.8649, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience20" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.05076, 0, 0, 0, -1.33353e-07, -3.05076, 0, 3.05076, -1.33353e-07, -8.13976, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_n1eun")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience21" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.24367, 0, 0, 0, -1.41785e-07, -3.24367, 0, 3.24367, -1.41785e-07, -5.38035, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_wpslq")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience22" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.15673, 0, 0, 0, -1.37985e-07, -3.15673, 0, 3.15673, -1.37985e-07, -2.68233, 2.80896, -16.6644)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_q242p")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience23" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.26581, 0, 0, 0, -1.42753e-07, -3.26581, 0, 3.26581, -1.42753e-07, 0, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience24" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.19207, 0, 0, 0, -1.3953e-07, -3.19207, 0, 3.19207, -1.3953e-07, 2.74485, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_71nm2")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience25" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.38877, 0, 0, 0, -1.48128e-07, -3.38877, 0, 3.38877, -1.48128e-07, 5.52672, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience26" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.45867, 0, 0, 0, -1.51183e-07, -3.45867, 0, 3.45867, -1.51183e-07, 8.25188, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience27" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.04557, 0, 0, 0, -1.33126e-07, -3.04557, 0, 3.04557, -1.33126e-07, 11.0113, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_71nm2")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience28" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.98478, 0, 0, 0, -1.30469e-07, -2.98478, 0, 2.98478, -1.30469e-07, 13.7093, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience29" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.78039, 0, 0, 0, -1.65246e-07, -3.78039, 0, 3.78039, -1.65246e-07, -13.6468, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience30" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.99536, 0, 0, 0, -1.30931e-07, -2.99536, 0, 2.99536, -1.30931e-07, -10.8649, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience31" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.80356, 0, 0, 0, -1.66259e-07, -3.80356, 0, 3.80356, -1.66259e-07, -8.13976, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_udfgr")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience32" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.07295, 0, 0, 0, -1.34323e-07, -3.07295, 0, 3.07295, -1.34323e-07, -5.38035, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_71nm2")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience33" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.96896, 0, 0, 0, -1.29777e-07, -2.96896, 0, 2.96896, -1.29777e-07, -2.68233, 4.21646, -22.1527)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_trd32")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience34" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.96503, 0, 0, 0, -1.29606e-07, -2.96503, 0, 2.96503, -1.29606e-07, 0, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience35" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.8973, 0, 0, 0, -1.26645e-07, -2.8973, 0, 2.8973, -1.26645e-07, 2.74485, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qwrpd")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience36" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.66651, 0, 0, 0, -1.16557e-07, -2.66651, 0, 2.66651, -1.16557e-07, 5.52672, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_rh63e")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience37" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.71096, 0, 0, 0, -1.185e-07, -2.71096, 0, 2.71096, -1.185e-07, 8.25188, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience38" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.8623, 0, 0, 0, -1.25115e-07, -2.8623, 0, 2.8623, -1.25115e-07, 11.0113, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qwrpd")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience39" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.74292, 0, 0, 0, -1.19897e-07, -2.74292, 0, 2.74292, -1.19897e-07, 13.7093, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience40" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(3.44956, 0, 0, 0, -1.50785e-07, -3.44956, 0, 3.44956, -1.50785e-07, -13.6468, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience41" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.94915, 0, 0, 0, -1.28912e-07, -2.94915, 0, 2.94915, -1.28912e-07, -10.8649, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_rh63e")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience42" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.888, 0, 0, 0, -1.26238e-07, -2.888, 0, 2.888, -1.26238e-07, -8.13976, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qwrpd")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience43" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.66674, 0, 0, 0, -1.16567e-07, -2.66674, 0, 2.66674, -1.16567e-07, -5.38035, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_qsr8o")
-script = ExtResource("6_eecbs")
-
-[node name="Basic_Audience44" type="MeshInstance3D" parent="Full_Audience"]
-transform = Transform3D(2.86192, 0, 0, 0, -1.25099e-07, -2.86192, 0, 2.86192, -1.25099e-07, -2.68233, 5.86668, -27.1209)
-mesh = SubResource("PlaneMesh_eecbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_rh63e")
-script = ExtResource("6_eecbs")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -674,6 +339,9 @@ transform = Transform3D(0.542563, 0, 0, 0, 0.542563, 0, 0, 0, 0.542563, 13.6675,
 transform = Transform3D(16.3854, 0, 0, 0, 16.3854, 0, 0, 0, 16.3854, 0, 0, 0)
 shape = SubResource("BoxShape3D_q242p")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qy12w")
+
 [connection signal="level_changed" from="Clown/Clown" to="RhythmCounter" method="_on_clown_level_changed"]
 [connection signal="level_changed" from="Clown/Clown" to="MusicController" method="_on_clown_level_changed"]
 [connection signal="number_of_balls_changes" from="Clown/Clown/ProjectileArch" to="Clown/Clown/Clown Juggling/AnimationPlayer" method="_on_projectile_arch_number_of_balls_changes"]
@@ -681,51 +349,7 @@ shape = SubResource("BoxShape3D_q242p")
 [connection signal="input_result" from="RhythmCounter" to="Control/CrowdMeter" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/Score" method="_on_rhythm_counter_input_result"]
 [connection signal="input_result" from="RhythmCounter" to="Control/Multiplier" method="_on_rhythm_counter_input_result"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Clown" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience2" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience3" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience4" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience6" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience7" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience9" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience10" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience11" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience13" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience14" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience5" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience8" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience12" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience15" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience16" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience17" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience18" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience19" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience20" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience21" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience22" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience23" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience24" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience25" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience26" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience27" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience28" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience29" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience30" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience31" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience32" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience33" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience34" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience35" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience36" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience37" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience38" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience39" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience40" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience41" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience42" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience43" method="_on_crowd_meter_crowd_level_changed"]
-[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Full_Audience/Basic_Audience44" method="_on_crowd_meter_crowd_level_changed"]
+[connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Audience" method="_on_crowd_level_changed"]
 [connection signal="crowd_level_changed" from="Control/CrowdMeter" to="Game Over" method="_on_crowd_meter_crowd_level_changed"]
 [connection signal="multiplier_changed" from="Control/Multiplier" to="Control/Score" method="_on_multiplier_multiplier_changed"]
 [connection signal="is_intro" from="MusicController" to="Clown/Clown" method="_on_music_controller_is_intro"]
@@ -734,8 +358,8 @@ shape = SubResource("BoxShape3D_q242p")
 [connection signal="is_intro" from="MusicController" to="Control/CrowdMeter" method="_on_music_controller_is_intro"]
 [connection signal="pressed" from="Game Over/Retry" to="Game Over" method="_on_retry_pressed"]
 [connection signal="pressed" from="Game Over/Quit" to="Game Over" method="_on_quit_pressed"]
-[connection signal="area_entered" from="Bounding_Left" to="Control/CrowdMeter" method="_on_bounding_left_area_entered"]
-[connection signal="area_entered" from="Bounding_Right" to="Control/CrowdMeter" method="_on_bounding_right_area_entered"]
+[connection signal="area_entered" from="Bounding_Left" to="Control/CrowdMeter" method="_on_out_of_bounds"]
+[connection signal="area_entered" from="Bounding_Right" to="Control/CrowdMeter" method="_on_out_of_bounds"]
 
 [editable path="Clown"]
 [editable path="Clown/Clown"]

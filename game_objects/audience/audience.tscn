@@ -1,0 +1,243 @@
+[gd_scene load_steps=27 format=3 uid="uid://dm0g2h6i2tphr"]
+
+[ext_resource type="Script" uid="uid://cgmck2qdmjnrf" path="res://game_objects/audience/audience.gd" id="1_w8jmi"]
+[ext_resource type="PackedScene" uid="uid://bgvo546d7dl83" path="res://game_objects/audience/audience_member.tscn" id="2_3fe0f"]
+[ext_resource type="Texture2D" uid="uid://dv3ibuuq8mjl1" path="res://assets/gfx/audience/kid.01.png" id="3_l85w6"]
+[ext_resource type="Texture2D" uid="uid://doi1ukdtvj68u" path="res://assets/gfx/audience/girl.01.png" id="4_nhdof"]
+[ext_resource type="Texture2D" uid="uid://diphqrfdto8mc" path="res://assets/gfx/audience/guy.01.png" id="5_3iojr"]
+[ext_resource type="Texture2D" uid="uid://iropa0qhvomu" path="res://assets/gfx/audience/girl.02.png" id="6_gn52m"]
+[ext_resource type="Texture2D" uid="uid://bu7x5bdj3fhhh" path="res://assets/gfx/audience/guy.02.png" id="7_keyta"]
+[ext_resource type="Texture2D" uid="uid://baogohm7s76qq" path="res://assets/gfx/audience/kid.02.png" id="8_exv43"]
+[ext_resource type="Texture2D" uid="uid://dtmlykb1exe0w" path="res://assets/gfx/audience/kid.03.png" id="9_78n7w"]
+[ext_resource type="Texture2D" uid="uid://cutc078m6kj8v" path="res://assets/gfx/audience/guy.03.png" id="10_t1417"]
+[ext_resource type="Texture2D" uid="uid://c3f748sp7spli" path="res://assets/gfx/audience/girl.03.png" id="11_dt363"]
+[ext_resource type="Texture2D" uid="uid://ccm6be5ihf2o4" path="res://assets/gfx/audience/girl.04.png" id="12_dfi10"]
+[ext_resource type="Texture2D" uid="uid://dvkograk73qag" path="res://assets/gfx/audience/guy.04.png" id="13_8fifn"]
+[ext_resource type="Texture2D" uid="uid://dnh4h6xgsibq4" path="res://assets/gfx/audience/kid.04.png" id="14_d3suc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7a20"]
+transparency = 1
+albedo_texture = ExtResource("3_l85w6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ujwli"]
+transparency = 1
+albedo_texture = ExtResource("4_nhdof")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd3oj"]
+transparency = 1
+albedo_texture = ExtResource("5_3iojr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xri34"]
+transparency = 1
+albedo_texture = ExtResource("6_gn52m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovlco"]
+transparency = 1
+albedo_texture = ExtResource("7_keyta")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clvy7"]
+transparency = 1
+albedo_texture = ExtResource("8_exv43")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_406bj"]
+transparency = 1
+albedo_texture = ExtResource("9_78n7w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8xbp"]
+transparency = 1
+albedo_texture = ExtResource("10_t1417")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45vwc"]
+transparency = 1
+albedo_texture = ExtResource("11_dt363")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_racai"]
+transparency = 1
+albedo_texture = ExtResource("12_dfi10")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81m5w"]
+transparency = 1
+albedo_texture = ExtResource("13_8fifn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alr2a"]
+transparency = 1
+albedo_texture = ExtResource("14_d3suc")
+
+[node name="Audience" type="Node3D"]
+script = ExtResource("1_w8jmi")
+
+[node name="AudienceMember_01" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -13.647, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_g7a20")
+
+[node name="AudienceMember_02" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -10.8602, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_ujwli")
+
+[node name="AudienceMember_03" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -8.19909, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_ujwli")
+
+[node name="AudienceMember_04" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -5.26447, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_jd3oj")
+
+[node name="AudienceMember_05" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -2.64236, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_ujwli")
+
+[node name="AudienceMember_06" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -0.113271, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_jd3oj")
+
+[node name="AudienceMember_07" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 2.68017, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_g7a20")
+
+[node name="AudienceMember_08" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 5.58147, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_ujwli")
+
+[node name="AudienceMember_09" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 8.15108, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_g7a20")
+
+[node name="AudienceMember_10" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 10.8149, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_jd3oj")
+
+[node name="AudienceMember_11" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 13.6046, 1.395, 7.17268)
+surface_material_override/0 = SubResource("StandardMaterial3D_ujwli")
+
+[node name="AudienceMember_12" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -13.647, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_xri34")
+
+[node name="AudienceMember_13" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -10.8197, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_ovlco")
+
+[node name="AudienceMember_14" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -8.14829, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_clvy7")
+
+[node name="AudienceMember_15" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -5.21318, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_clvy7")
+
+[node name="AudienceMember_16" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -2.66661, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_ovlco")
+
+[node name="AudienceMember_17" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -0.00861454, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_xri34")
+
+[node name="AudienceMember_18" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 2.77983, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_ovlco")
+
+[node name="AudienceMember_19" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 5.49712, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_xri34")
+
+[node name="AudienceMember_20" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 8.24914, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_clvy7")
+
+[node name="AudienceMember_21" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 11.0377, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_ovlco")
+
+[node name="AudienceMember_22" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 13.7606, 2.809, 2.21468)
+surface_material_override/0 = SubResource("StandardMaterial3D_xri34")
+
+[node name="AudienceMember_23" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -13.647, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_406bj")
+
+[node name="AudienceMember_24" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -10.7344, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_b8xbp")
+
+[node name="AudienceMember_25" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -8.05908, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_406bj")
+
+[node name="AudienceMember_26" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -5.2415, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_45vwc")
+
+[node name="AudienceMember_27" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -2.67257, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_b8xbp")
+
+[node name="AudienceMember_28" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -0.0856223, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_406bj")
+
+[node name="AudienceMember_29" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 2.68033, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_45vwc")
+
+[node name="AudienceMember_30" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 5.4604, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_b8xbp")
+
+[node name="AudienceMember_31" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 8.13796, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_406bj")
+
+[node name="AudienceMember_32" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 11.0524, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_45vwc")
+
+[node name="AudienceMember_33" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 13.6932, 4.216, -3.27432)
+surface_material_override/0 = SubResource("StandardMaterial3D_b8xbp")
+
+[node name="AudienceMember_34" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -13.647, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_racai")
+
+[node name="AudienceMember_35" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -10.6734, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_81m5w")
+
+[node name="AudienceMember_36" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -8.13649, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_alr2a")
+
+[node name="AudienceMember_37" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -5.29301, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_racai")
+
+[node name="AudienceMember_38" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -2.68797, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_81m5w")
+
+[node name="AudienceMember_39" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, -0.0801196, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_racai")
+
+[node name="AudienceMember_40" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 2.68902, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_alr2a")
+
+[node name="AudienceMember_41" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 5.6254, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_81m5w")
+
+[node name="AudienceMember_42" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 8.25766, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_racai")
+
+[node name="AudienceMember_44" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 13.8528, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_racai")
+
+[node name="AudienceMember_43" parent="." instance=ExtResource("2_3fe0f")]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 11.023, 5.867, -8.24232)
+surface_material_override/0 = SubResource("StandardMaterial3D_alr2a")

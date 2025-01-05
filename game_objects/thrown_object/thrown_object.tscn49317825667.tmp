@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkkyo8e62itv"]
+
+[ext_resource type="Script" path="res://game_objects/thown_object/thrown_object.gd" id="1_6y6vu"]
+[ext_resource type="Script" path="res://game_objects/thown_object/up_throw.gd" id="2_6y6vu"]
+[ext_resource type="Texture2D" uid="uid://c0m054csthabk" path="res://assets/fonts/Exclamation-Point.png" id="3_24u0a"]
+[ext_resource type="Script" path="res://game_objects/thown_object/fall_down.gd" id="3_cxh5h"]
+[ext_resource type="Script" path="res://game_objects/thown_object/warning.gd" id="5_cxh5h"]
+
+[sub_resource type="Curve3D" id="Curve3D_vxyq1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_6y6vu"]
+
+[node name="Thrown Object" type="Node3D"]
+script = ExtResource("1_6y6vu")
+
+[node name="Up" type="Path3D" parent="."]
+transform = Transform3D(-5.47119e-07, 0, 12.5166, 0, 12.5166, 0, -12.5166, 0, -5.47119e-07, 0, 0, 0)
+curve = SubResource("Curve3D_vxyq1")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Up"]
+transform = Transform3D(-4.37114e-08, 0.999968, -4.371e-08, 0, -4.371e-08, -0.999968, -1, -4.371e-08, 1.91062e-15, 0, 3.9935, 0)
+progress = 3.9884
+script = ExtResource("2_6y6vu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Up/PathFollow3D"]
+transform = Transform3D(-0.236192, -0.00124138, -0.00815711, 0.000964375, 0.23102, -0.0599912, -0.00834437, 0.0618376, 0.223958, 0, 0, 0)
+mesh = SubResource("SphereMesh_6y6vu")
+
+[node name="Down" type="Path3D" parent="."]
+transform = Transform3D(-12.5166, 1.09424e-06, 0, -1.09424e-06, -12.5166, 0, 0, 0, 12.5166, 0, 50.6557, 45.4571)
+curve = SubResource("Curve3D_vxyq1")
+script = ExtResource("3_cxh5h")
+
+[node name="Warning" type="Sprite3D" parent="Down"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 1.29294e-07, 1.47894, 0)
+flip_v = true
+texture = ExtResource("3_24u0a")
+script = ExtResource("5_cxh5h")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Down"]
+transform = Transform3D(-4.37114e-08, 0.999968, -4.371e-08, 0, -4.371e-08, -0.999968, -1, -4.371e-08, 1.91062e-15, 0, 1.69868, 0)
+progress = 1.69896
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Down/PathFollow3D"]
+transform = Transform3D(-0.236192, -0.00124138, -0.00815711, 0.000964375, 0.23102, -0.0599912, -0.00834437, 0.0618376, 0.223958, 0, 0, 0)
+mesh = SubResource("SphereMesh_6y6vu")

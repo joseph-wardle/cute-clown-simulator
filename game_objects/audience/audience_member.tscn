@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgvo546d7dl83"]
+
+[ext_resource type="Script" uid="uid://bqd8hsrhhsp3" path="res://game_objects/audience/audience_member.gd" id="1_pr6ig"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ek5t8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vj8n"]
+transparency = 1
+
+[node name="AudienceMember" type="MeshInstance3D"]
+transform = Transform3D(3.333, 0, 0, 0, -1.4569e-07, -3.333, 0, 3.333, -1.4569e-07, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ek5t8")
+surface_material_override/0 = SubResource("StandardMaterial3D_3vj8n")
+script = ExtResource("1_pr6ig")

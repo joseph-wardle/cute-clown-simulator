@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bwliioxon2evx"]
 
-[ext_resource type="Script" path="res://game_objects/input_indicator/input_indicator.gd" id="1_pucbm"]
-[ext_resource type="Texture2D" uid="uid://c3owoujltb861" path="res://assets/gfx/miss.png" id="2_5n6c8"]
-[ext_resource type="Texture2D" uid="uid://c1ioavse3fxw2" path="res://assets/gfx/ok.png" id="3_l52x2"]
-[ext_resource type="Texture2D" uid="uid://bk3ovl07vmak1" path="res://assets/gfx/good.png" id="4_thqsp"]
-[ext_resource type="Texture2D" uid="uid://c51pt5gmfunju" path="res://assets/gfx/perfect.png" id="5_56qjb"]
+[ext_resource type="Script" uid="uid://dtmcjqcoifnd1" path="res://game_objects/input_indicator/input_indicator.gd" id="1_pucbm"]
+[ext_resource type="Texture2D" uid="uid://c3owoujltb861" path="res://assets/gfx/UI/miss.png" id="2_5n6c8"]
+[ext_resource type="Texture2D" uid="uid://c1ioavse3fxw2" path="res://assets/gfx/UI/ok.png" id="3_l52x2"]
+[ext_resource type="Texture2D" uid="uid://bk3ovl07vmak1" path="res://assets/gfx/UI/good.png" id="4_thqsp"]
+[ext_resource type="Texture2D" uid="uid://c51pt5gmfunju" path="res://assets/gfx/UI/perfect.png" id="5_56qjb"]
 
 [sub_resource type="Animation" id="Animation_l52x2"]
 length = 0.001

@@ -15,23 +15,15 @@ signal input_result(input_type: InputType)
 @export var ok_window := 400.0
 
 @export var bpm: float:
-	get:
-		return _calculate_bpm()
-	set(new_bpm):
-		_update_wait_time(new_bpm)
+	get: return _calculate_bpm()
+	set(new_bpm): _update_wait_time(new_bpm)
 
 var last_beat_time_ms := 0.0
 var perfect_window_half: float
 var good_window_half: float
 var ok_window_half: float
 var current_offset_ms : float
-var is_intro_active := true
-
-
-func reset_beat() -> void:
-	last_beat_time_ms = Time.get_ticks_msec()
-	emit_signal("beat")
-
+var is_intro := true
 
 func _ready() -> void:
 	_refresh_window_halves()
@@ -46,6 +38,11 @@ func _update_wait_time(new_bpm: float) -> void:
 	wait_time = 60.0 / new_bpm if new_bpm > 0 else 0.0
 
 
+func reset_beat() -> void:
+	last_beat_time_ms = Time.get_ticks_msec()
+	emit_signal("beat")
+
+
 func _refresh_window_halves() -> void:
 	perfect_window_half = perfect_window * 0.5
 	good_window_half = good_window * 0.5
@@ -53,7 +50,7 @@ func _refresh_window_halves() -> void:
 
 
 func _input(event):
-	if event.is_action_pressed("beat") and not is_intro_active:
+	if event.is_action_pressed("beat") and not is_intro:
 		var input_time_ms := Time.get_ticks_msec()
 		current_offset_ms = _calculate_input_offset(input_time_ms)
 		var accuracy := _evaluate_input_accuracy(current_offset_ms)
@@ -90,11 +87,11 @@ func _on_clown_level_changed(level: int) -> void:
 		2:
 			_apply_difficulty(150.0, 200.0, 225.0, 126.0)
 		3:
-			_apply_difficulty(100.0, 125.0, 175.0, 141.0)
+			_apply_difficulty(125.0, 160.0, 200.0, 141.0)
 		4:
-			_apply_difficulty(75.0, 100.0, 125.0, 161.0)
+			_apply_difficulty(100.0, 130.0, 160.0, 161.0)
 		5:
-			_apply_difficulty(50.0, 75.0, 100.0, 189.0)
+			_apply_difficulty(75.0, 100.0, 130.0, 189.0)
 
 
 func _apply_difficulty(perfect: float, good: float, ok: float, new_bpm: float) -> void:
@@ -104,8 +101,8 @@ func _apply_difficulty(perfect: float, good: float, ok: float, new_bpm: float) -
 	bpm = new_bpm
 	_refresh_window_halves()
 
-func _on_music_controller_is_intro(is_intro: bool) -> void:
-	is_intro_active = is_intro
+func _on_music_controller_is_intro(controller_is_intro: bool) -> void:
+	is_intro = controller_is_intro
 	
 
 	
