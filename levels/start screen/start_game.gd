@@ -1,4 +1,5 @@
 extends Button
 
-func _button_pressed():
-	print("fart")
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/stage/stage.tscn")

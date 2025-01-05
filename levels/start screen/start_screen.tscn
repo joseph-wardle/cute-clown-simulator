@@ -1,5 +1,6 @@
-[gd_scene load_steps=164 format=3 uid="uid://b5b4sthh6lbye"]
+[gd_scene load_steps=165 format=3 uid="uid://b5b4sthh6lbye"]
 
+[ext_resource type="Script" path="res://levels/start screen/start_screen.gd" id="1_cg6dy"]
 [ext_resource type="Texture2D" uid="uid://cth4ujnwgfxph" path="res://levels/start screen/Sprites/red_curtain-removebg-preview.png" id="1_dckah"]
 [ext_resource type="Texture2D" uid="uid://dva0qvi51wca5" path="res://levels/start screen/Sprites/Gemini_Generated_Image_5tkx35tkx35tkx35-removebg-preview.png" id="1_mvvr7"]
 [ext_resource type="Texture2D" uid="uid://bbh8ebgcmh70y" path="res://game_objects/curtain/curtaincolor.png" id="2_7rljf"]
@@ -1108,6 +1109,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cg6dy")
 
 [node name="background_curtain" type="Sprite2D" parent="."]
 modulate = Color(0.392697, 0.138272, 0.0365263, 1)
@@ -1202,20 +1204,21 @@ grow_vertical = 2
 text = "Quit"
 script = ExtResource("5_dn63e")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="CostumeButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1030.0
 offset_top = 493.0
 offset_right = 1127.0
 offset_bottom = 614.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureButton"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CostumeButton"]
 position = Vector2(45, 60)
 scale = Vector2(0.268172, 0.276766)
 sprite_frames = SubResource("SpriteFrames_eynnm")
 speed_scale = 15.0
 script = ExtResource("3_c4jxx")
 
+[connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
 [connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
-[connection signal="mouse_entered" from="TextureButton" to="TextureButton/AnimatedSprite2D" method="_on_texture_button_mouse_entered"]
-[connection signal="mouse_exited" from="TextureButton" to="TextureButton/AnimatedSprite2D" method="_on_texture_button_mouse_exited"]
+[connection signal="mouse_entered" from="CostumeButton" to="CostumeButton/AnimatedSprite2D" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="CostumeButton" to="CostumeButton/AnimatedSprite2D" method="_on_texture_button_mouse_exited"]
