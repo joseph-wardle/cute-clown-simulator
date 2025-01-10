@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0m054csthabk"
-path.s3tc="res://.godot/imported/Exclamation-Point.png-ae85edd079c9379362b7b6f1c5d3b4ec.s3tc.ctex"
-path.etc2="res://.godot/imported/Exclamation-Point.png-ae85edd079c9379362b7b6f1c5d3b4ec.etc2.ctex"
+path.s3tc="res://.godot/imported/Exclamation-Point.png-904cdc032d8ce2b8d408f070126be1ab.s3tc.ctex"
+path.etc2="res://.godot/imported/Exclamation-Point.png-904cdc032d8ce2b8d408f070126be1ab.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/fonts/Exclamation-Point.png"
-dest_files=["res://.godot/imported/Exclamation-Point.png-ae85edd079c9379362b7b6f1c5d3b4ec.s3tc.ctex", "res://.godot/imported/Exclamation-Point.png-ae85edd079c9379362b7b6f1c5d3b4ec.etc2.ctex"]
+source_file="res://assets/gfx/UI/Exclamation-Point.png"
+dest_files=["res://.godot/imported/Exclamation-Point.png-904cdc032d8ce2b8d408f070126be1ab.s3tc.ctex", "res://.godot/imported/Exclamation-Point.png-904cdc032d8ce2b8d408f070126be1ab.etc2.ctex"]
 
 [params]
 

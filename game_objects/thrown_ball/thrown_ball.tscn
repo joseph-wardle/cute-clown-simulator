@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkkyo8e62itv"]
+
+[ext_resource type="Script" uid="uid://b0osg1bfo0wpa" path="res://game_objects/thrown_ball/thrown_ball.gd" id="1_6y6vu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7h14k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6y6vu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqt8n"]
+albedo_color = Color(0.643137, 0, 0.0980392, 1)
+
+[node name="Thrown Object" type="Node3D"]
+script = ExtResource("1_6y6vu")
+
+[node name="Collision" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+shape = SubResource("SphereShape3D_7h14k")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -1.39698e-09, -3.72529e-09, -9.31323e-10, 1, -2.78669e-08, 0, -6.03904e-09, 1, 0, 0, 0)
+mesh = SubResource("SphereMesh_6y6vu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_lqt8n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="Collision" to="." method="_on_collision_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
