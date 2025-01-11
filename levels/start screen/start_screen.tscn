@@ -1,13 +1,23 @@
-[gd_scene load_steps=165 format=3 uid="uid://b5b4sthh6lbye"]
+[gd_scene load_steps=172 format=3 uid="uid://b5b4sthh6lbye"]
 
 [ext_resource type="Script" path="res://levels/start screen/start_screen.gd" id="1_cg6dy"]
 [ext_resource type="Texture2D" uid="uid://cth4ujnwgfxph" path="res://levels/start screen/Sprites/red_curtain-removebg-preview.png" id="1_dckah"]
-[ext_resource type="Texture2D" uid="uid://dva0qvi51wca5" path="res://levels/start screen/Sprites/Gemini_Generated_Image_5tkx35tkx35tkx35-removebg-preview.png" id="1_mvvr7"]
 [ext_resource type="Texture2D" uid="uid://bbh8ebgcmh70y" path="res://game_objects/curtain/curtaincolor.png" id="2_7rljf"]
 [ext_resource type="Texture2D" uid="uid://2qhx41sdmmng" path="res://levels/start screen/Sprites/mirror-ezgif.com-gif-to-sprite-converter (1).png" id="2_gbmjq"]
 [ext_resource type="Script" path="res://levels/start screen/ChangeCostume.gd" id="3_c4jxx"]
-[ext_resource type="Script" path="res://levels/start screen/start_game.gd" id="4_cg6dy"]
-[ext_resource type="Script" path="res://levels/start screen/quit.gd" id="5_dn63e"]
+[ext_resource type="Script" path="res://levels/start screen/buttons.gd" id="4_cg6dy"]
+[ext_resource type="Texture2D" uid="uid://cxchbsevc4pxm" path="res://levels/start screen/Sprites/Title Card.png" id="4_dn63e"]
+[ext_resource type="Script" path="res://levels/start screen/title_card.gd" id="5_dya5f"]
+[ext_resource type="Texture2D" uid="uid://bqgsu57i0ya4l" path="res://levels/start screen/Sprites/Start Game.png" id="5_etnlj"]
+[ext_resource type="Texture2D" uid="uid://b3qnbs4pe1g05" path="res://levels/start screen/Sprites/How to Play.png" id="7_dya5f"]
+[ext_resource type="Texture2D" uid="uid://bby2htk8ye2mu" path="res://levels/start screen/Sprites/Credits.png" id="8_yyjik"]
+[ext_resource type="Texture2D" uid="uid://bo58falmcmct5" path="res://levels/start screen/Sprites/Quit.png" id="9_xkmtg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcsph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dya5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyjik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4jxx"]
 atlas = ExtResource("2_gbmjq")
@@ -1112,21 +1122,21 @@ grow_vertical = 2
 script = ExtResource("1_cg6dy")
 
 [node name="background_curtain" type="Sprite2D" parent="."]
-modulate = Color(0.392697, 0.138272, 0.0365263, 1)
-position = Vector2(580, 361)
-scale = Vector2(5.75622, 7.3)
+modulate = Color(0.347523, 0.118772, 0.0283005, 1)
+position = Vector2(590, 391)
+scale = Vector2(6.29602, 7.94)
 texture = ExtResource("1_dckah")
 
 [node name="Curtaincolor2" type="Sprite2D" parent="."]
 modulate = Color(0.737193, 0.737193, 0.737193, 1)
-position = Vector2(1023, 324)
+position = Vector2(1023, 328)
 rotation = 3.14159
 scale = Vector2(0.3, -0.32)
 texture = ExtResource("2_7rljf")
 
 [node name="Curtaincolor" type="Sprite2D" parent="."]
 modulate = Color(0.737193, 0.737193, 0.737193, 1)
-position = Vector2(125, 320)
+position = Vector2(129, 327)
 scale = Vector2(0.3, 0.32)
 texture = ExtResource("2_7rljf")
 
@@ -1135,12 +1145,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -438.0
-offset_top = -94.0
-offset_right = 439.0
-offset_bottom = 698.0
+offset_left = -944.0
+offset_top = -98.0
+offset_right = 977.0
+offset_bottom = 2101.0
 grow_horizontal = 2
-texture = ExtResource("1_mvvr7")
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(960, 8)
+texture = ExtResource("4_dn63e")
+script = ExtResource("5_dya5f")
 
 [node name="Start Game" type="Button" parent="."]
 layout_mode = 1
@@ -1149,14 +1162,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -388.0
-offset_top = 231.0
-offset_right = -234.0
-offset_bottom = 270.0
+offset_left = -694.0
+offset_top = 101.0
+offset_right = 22.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Game"
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(352, 128)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gcsph")
+text = "
+"
+icon = ExtResource("5_etnlj")
+flat = true
+icon_alignment = 1
 script = ExtResource("4_cg6dy")
+button_type = "start"
 
 [node name="How to Play" type="Button" parent="."]
 layout_mode = 1
@@ -1165,13 +1186,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -182.0
-offset_top = 227.0
-offset_right = -28.0
-offset_bottom = 266.0
+offset_left = -417.0
+offset_top = 114.0
+offset_right = 229.0
+offset_bottom = 327.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "How to Play"
+scale = Vector2(0.275, 0.275)
+pivot_offset = Vector2(312.727, 109.091)
+icon = ExtResource("7_dya5f")
+flat = true
+script = ExtResource("4_cg6dy")
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 1
@@ -1180,13 +1205,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 24.0
-offset_top = 226.0
-offset_right = 178.0
-offset_bottom = 265.0
+offset_left = -160.0
+offset_top = 101.0
+offset_right = 441.0
+offset_bottom = 332.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Credits"
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(292, 120)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dya5f")
+icon = ExtResource("8_yyjik")
+flat = true
+script = ExtResource("4_cg6dy")
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 1
@@ -1195,14 +1225,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 243.0
-offset_top = 226.0
-offset_right = 397.0
-offset_bottom = 265.0
+offset_left = 24.0
+offset_top = 99.0
+offset_right = 646.0
+offset_bottom = 346.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quit"
-script = ExtResource("5_dn63e")
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(328, 120)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yyjik")
+icon = ExtResource("9_xkmtg")
+flat = true
+script = ExtResource("4_cg6dy")
+button_type = "quit"
 
 [node name="CostumeButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -1218,7 +1253,15 @@ sprite_frames = SubResource("SpriteFrames_eynnm")
 speed_scale = 15.0
 script = ExtResource("3_c4jxx")
 
+[connection signal="mouse_entered" from="Start Game" to="Start Game" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start Game" to="Start Game" method="_on_mouse_exited"]
 [connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
+[connection signal="mouse_entered" from="How to Play" to="How to Play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="How to Play" to="How to Play" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Credits" to="Credits" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Credits" to="Credits" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Quit" to="Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
 [connection signal="mouse_entered" from="CostumeButton" to="CostumeButton/AnimatedSprite2D" method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="CostumeButton" to="CostumeButton/AnimatedSprite2D" method="_on_texture_button_mouse_exited"]
