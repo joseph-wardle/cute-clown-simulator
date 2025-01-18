@@ -59,21 +59,6 @@ text = "CUTE CLOWN SIMULATOR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Start" type="Label" parent="Start Game"]
-modulate = Color(0.929412, 1, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.69
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -28.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
-text = "PRESS SPACE TO START"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="LevelGeometry" type="Node3D" parent="."]
 
 [node name="Platform" type="StaticBody3D" parent="LevelGeometry"]
@@ -184,8 +169,8 @@ transform = Transform3D(0.999847, 0.0136243, 0.0109618, -0.0136129, 0.999907, -0
 script = ExtResource("6_udfgr")
 
 [node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
-transform = Transform3D(-1.66233e-07, 0.991411, 0.130146, -5.0685e-08, -0.130146, 0.991411, 1, 1.58209e-07, 7.18842e-08, -0.986122, 0.105715, 0)
-progress = 5.02578
+transform = Transform3D(-4.37114e-08, 0, -0.999917, 0, 0.999917, 0, 1, 0, -4.37078e-08, 0.633127, 0, 0)
+progress = 1.63313
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)

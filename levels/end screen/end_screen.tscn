@@ -1,0 +1,226 @@
+[gd_scene load_steps=13 format=3 uid="uid://cx668y4e2uuua"]
+
+[ext_resource type="Script" path="res://levels/start screen/start_screen.gd" id="1_v8kl0"]
+[ext_resource type="Texture2D" uid="uid://cth4ujnwgfxph" path="res://levels/start screen/Sprites/red_curtain-removebg-preview.png" id="2_61o6u"]
+[ext_resource type="Texture2D" uid="uid://bbh8ebgcmh70y" path="res://game_objects/curtain/curtaincolor.png" id="3_85ihl"]
+[ext_resource type="Script" path="res://levels/start screen/title_card.gd" id="5_n5nc0"]
+[ext_resource type="Texture2D" uid="uid://dfy7u5qwv2bcf" path="res://levels/end screen/Sprites/Rope.png" id="5_raak5"]
+[ext_resource type="Texture2D" uid="uid://bqgsu57i0ya4l" path="res://levels/start screen/Sprites/Start Game.png" id="6_brndc"]
+[ext_resource type="Script" path="res://levels/start screen/buttons.gd" id="7_hmhgu"]
+[ext_resource type="Texture2D" uid="uid://xc160t35udul" path="res://levels/end screen/Sprites/blackboard-removebg-preview.png" id="7_xrytp"]
+[ext_resource type="FontFile" uid="uid://p4ubkwpsl1of" path="res://levels/end screen/Sprites/EraserRegular.ttf" id="8_h78qc"]
+[ext_resource type="Texture2D" uid="uid://bo58falmcmct5" path="res://levels/start screen/Sprites/Quit.png" id="10_dijjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcsph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyjik"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v8kl0")
+
+[node name="Background" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="background_curtain" type="Sprite2D" parent="Background"]
+modulate = Color(0.347523, 0.118772, 0.0283005, 1)
+position = Vector2(590, 391)
+scale = Vector2(6.29602, 7.94)
+texture = ExtResource("2_61o6u")
+
+[node name="Curtaincolor2" type="Sprite2D" parent="Background"]
+modulate = Color(0.737193, 0.737193, 0.737193, 1)
+position = Vector2(1023, 328)
+rotation = 3.14159
+scale = Vector2(0.3, -0.32)
+texture = ExtResource("3_85ihl")
+
+[node name="Curtaincolor" type="Sprite2D" parent="Background"]
+modulate = Color(0.737193, 0.737193, 0.737193, 1)
+position = Vector2(129, 327)
+scale = Vector2(0.3, 0.32)
+texture = ExtResource("3_85ihl")
+
+[node name="Container" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = -141.0
+offset_right = 933.0
+offset_bottom = 730.0
+pivot_offset = Vector2(348, 9)
+script = ExtResource("5_n5nc0")
+rotation_angle = 120
+
+[node name="Rope3" type="Sprite2D" parent="Container"]
+position = Vector2(151.875, 501)
+scale = Vector2(0.202465, 0.451843)
+texture = ExtResource("5_raak5")
+
+[node name="Rope4" type="Sprite2D" parent="Container"]
+position = Vector2(525, 508)
+scale = Vector2(0.202465, 0.451843)
+texture = ExtResource("5_raak5")
+
+[node name="Name1" type="Sprite2D" parent="Container"]
+position = Vector2(521, 389)
+scale = Vector2(0.551724, 0.326786)
+texture = ExtResource("7_xrytp")
+
+[node name="Name2" type="Sprite2D" parent="Container"]
+position = Vector2(521, 486)
+scale = Vector2(0.546935, 0.326786)
+texture = ExtResource("7_xrytp")
+
+[node name="Name3" type="Sprite2D" parent="Container"]
+position = Vector2(523, 585)
+scale = Vector2(0.551724, 0.326786)
+texture = ExtResource("7_xrytp")
+
+[node name="PersonalName" type="Sprite2D" parent="Container"]
+position = Vector2(523, 709.625)
+scale = Vector2(0.551724, 0.309821)
+texture = ExtResource("7_xrytp")
+
+[node name="Leaderboard" type="Sprite2D" parent="Container"]
+position = Vector2(329.642, 265.5)
+scale = Vector2(1.43924, 0.625)
+texture = ExtResource("7_xrytp")
+
+[node name="Spot1" type="Sprite2D" parent="Container"]
+position = Vector2(193, 390.75)
+scale = Vector2(0.751437, 0.326786)
+texture = ExtResource("7_xrytp")
+
+[node name="Spot2" type="Sprite2D" parent="Container"]
+position = Vector2(195, 486.75)
+scale = Vector2(0.751437, 0.326786)
+texture = ExtResource("7_xrytp")
+
+[node name="Spot3" type="Sprite2D" parent="Container"]
+position = Vector2(198, 584.75)
+scale = Vector2(0.751437, 0.326786)
+texture = ExtResource("7_xrytp")
+
+[node name="PersonalScore" type="Sprite2D" parent="Container"]
+position = Vector2(201.555, 707)
+scale = Vector2(0.699024, 0.304241)
+texture = ExtResource("7_xrytp")
+
+[node name="Rope" type="Sprite2D" parent="Container"]
+position = Vector2(90, 98)
+scale = Vector2(0.262911, 0.228894)
+texture = ExtResource("5_raak5")
+
+[node name="Rope2" type="Sprite2D" parent="Container"]
+position = Vector2(582, 98)
+scale = Vector2(0.262911, 0.228894)
+texture = ExtResource("5_raak5")
+
+[node name="LeaderboardTitle" type="LineEdit" parent="Container"]
+layout_mode = 2
+offset_left = 106.642
+offset_top = 213.5
+offset_right = 569.642
+offset_bottom = 300.5
+pivot_offset = Vector2(-66.6422, -60.5)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 64
+text = "Leaderboard"
+alignment = 1
+flat = true
+
+[node name="Place1" type="LineEdit" parent="Container"]
+layout_mode = 2
+offset_left = -18.0
+offset_top = 350.75
+offset_right = 146.0
+offset_bottom = 434.75
+pivot_offset = Vector2(58, -197.75)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+text = "1:"
+alignment = 1
+flat = true
+
+[node name="Place2" type="LineEdit" parent="Container"]
+layout_mode = 2
+offset_left = -15.0
+offset_top = 441.75
+offset_right = 149.0
+offset_bottom = 525.75
+pivot_offset = Vector2(55, -288.75)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+text = "2:"
+alignment = 1
+flat = true
+
+[node name="Place3" type="LineEdit" parent="Container"]
+layout_mode = 2
+offset_left = -12.0
+offset_top = 539.75
+offset_right = 152.0
+offset_bottom = 623.75
+pivot_offset = Vector2(52, -386.75)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+text = "3:"
+alignment = 1
+flat = true
+
+[node name="Restart Game" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -760.0
+offset_top = 129.0
+offset_right = -44.0
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(352, 128)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gcsph")
+text = "
+"
+icon = ExtResource("6_brndc")
+flat = true
+icon_alignment = 1
+script = ExtResource("7_hmhgu")
+button_type = "start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 112.0
+offset_top = 130.0
+offset_right = 734.0
+offset_bottom = 377.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(328, 120)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yyjik")
+icon = ExtResource("10_dijjg")
+flat = true
+script = ExtResource("7_hmhgu")
+button_type = "quit"
+
+[connection signal="mouse_entered" from="Restart Game" to="Restart Game" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Restart Game" to="Restart Game" method="_on_mouse_exited"]
+[connection signal="pressed" from="Restart Game" to="Restart Game" method="_on_pressed"]
+[connection signal="mouse_entered" from="Quit" to="Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]

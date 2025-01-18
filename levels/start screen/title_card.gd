@@ -1,7 +1,7 @@
 extends TextureRect
 
-var rotation_speed = 1
-var rotation_angle = 40
+@export var rotation_speed = 1
+@export var rotation_angle = 40
 var time = 0
 
 
