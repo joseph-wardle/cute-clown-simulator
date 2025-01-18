@@ -1,6 +1,5 @@
-[gd_scene load_steps=172 format=3 uid="uid://b5b4sthh6lbye"]
+[gd_scene load_steps=171 format=3 uid="uid://b5b4sthh6lbye"]
 
-[ext_resource type="Script" path="res://levels/start screen/start_screen.gd" id="1_cg6dy"]
 [ext_resource type="Texture2D" uid="uid://cth4ujnwgfxph" path="res://levels/start screen/Sprites/red_curtain-removebg-preview.png" id="1_dckah"]
 [ext_resource type="Texture2D" uid="uid://bbh8ebgcmh70y" path="res://game_objects/curtain/curtaincolor.png" id="2_7rljf"]
 [ext_resource type="Texture2D" uid="uid://2qhx41sdmmng" path="res://levels/start screen/Sprites/mirror-ezgif.com-gif-to-sprite-converter (1).png" id="2_gbmjq"]
@@ -1119,7 +1118,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cg6dy")
 
 [node name="background_curtain" type="Sprite2D" parent="."]
 modulate = Color(0.347523, 0.118772, 0.0283005, 1)

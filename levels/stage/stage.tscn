@@ -29,9 +29,7 @@ radius = 10.0
 
 [sub_resource type="Environment" id="Environment_qy12w"]
 background_mode = 1
-fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 
 [node name="Stage" type="Node3D"]
@@ -146,8 +144,8 @@ transform = Transform3D(0.999847, 0.0136243, 0.0109618, -0.0136129, 0.999907, -0
 script = ExtResource("6_udfgr")
 
 [node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
-transform = Transform3D(7.09408e-08, 0.609104, 0.792985, 1.19747e-07, -0.792985, 0.609104, 1, 5.17475e-08, -1.29194e-07, -0.575884, 0.807712, 0)
-progress = 4.18392
+transform = Transform3D(3.23327e-08, 0.130147, 0.991411, 8.66791e-08, -0.991411, 0.130147, 1, 8.17266e-08, -4.33359e-08, -0.0606297, 0.992041, 0)
+progress = 3.62723
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
