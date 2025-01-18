@@ -3,7 +3,7 @@ extends ProgressBar
 @export var perfect_effect := 15
 @export var good_effect := 8
 @export var ok_effect := 5
-@export var miss_effect := -30
+@export var miss_effect := -10
 @export var deterioration_rate := 7.0
 
 @export var crowd_level := 100.0:

@@ -56,7 +56,6 @@ func _input(event):
 		var accuracy := _evaluate_input_accuracy(current_offset_ms)
 		emit_signal("input_result", accuracy)
 
-
 func _calculate_input_offset(input_time_ms: float) -> float:
 	var beat_duration_ms := wait_time * 1000.0 # convert to ms
 	var ms_elapsed_since_last_beat := input_time_ms - last_beat_time_ms
