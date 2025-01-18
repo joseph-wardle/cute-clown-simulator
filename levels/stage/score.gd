@@ -20,6 +20,7 @@ func set_text_color(color: String):
 func update_score_display():
 	clear()  # Clear the label before updating 
 	append_text("[color=red]SCORE: [/color][color=yellow]" + str(score) + " [/color][color=white]" + "[/color]")
+	Global.current_score = score
 	
 func _on_rhythm_counter_input_result(input_type: int) -> void:
 	match input_type:

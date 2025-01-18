@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0uwejejiswbo"]
+[gd_scene load_steps=18 format=3 uid="uid://d0uwejejiswbo"]
 
-[ext_resource type="Script" path="res://levels/stage/start_game.gd" id="1_1qtcg"]
 [ext_resource type="PackedScene" uid="uid://wvkwyl3hcce8" path="res://game_objects/ball/ball.tscn" id="1_dkf10"]
 [ext_resource type="PackedScene" uid="uid://dtfte2durrhus" path="res://game_objects/bleacher/backstage.tscn" id="1_eecbs"]
 [ext_resource type="PackedScene" uid="uid://kqjay26lo8x8" path="res://game_objects/rhythm_counter/rhythm_counter.tscn" id="2_atwpc"]
@@ -36,28 +35,6 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 
 [node name="Stage" type="Node3D"]
-
-[node name="Start Game" type="Control" parent="."]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_1qtcg")
-
-[node name="Label" type="Label" parent="Start Game"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.136
-offset_bottom = 96.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 70
-text = "CUTE CLOWN SIMULATOR"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="LevelGeometry" type="Node3D" parent="."]
 
@@ -169,8 +146,8 @@ transform = Transform3D(0.999847, 0.0136243, 0.0109618, -0.0136129, 0.999907, -0
 script = ExtResource("6_udfgr")
 
 [node name="TimeKeepingBall" parent="Clown/Clown/ProjectileArch" index="1"]
-transform = Transform3D(-4.37114e-08, 0, -0.999917, 0, 0.999917, 0, 1, 0, -4.37078e-08, 0.633127, 0, 0)
-progress = 1.63313
+transform = Transform3D(7.09408e-08, 0.609104, 0.792985, 1.19747e-07, -0.792985, 0.609104, 1, 5.17475e-08, -1.29194e-07, -0.575884, 0.807712, 0)
+progress = 4.18392
 
 [node name="InputIndicatorRemoteTransform" type="RemoteTransform3D" parent="Clown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27471, 0.989468)
@@ -258,53 +235,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("24_oreq5")
 
-[node name="Label" type="Label" parent="Game Over"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.08
-anchor_right = 0.915
-anchor_bottom = 0.285
-offset_bottom = 137.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 100
-text = "GAME OVER"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Retry" type="Button" parent="Game Over"]
-process_mode = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.534
-anchor_right = 0.5
-anchor_bottom = 0.534
-offset_left = -125.5
-offset_top = -33.0
-offset_right = 125.5
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "RETRY"
-
-[node name="Quit" type="Button" parent="Game Over"]
-process_mode = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.432
-anchor_top = 0.646
-anchor_right = 0.568
-anchor_bottom = 0.666
-offset_left = -40.0
-offset_top = -25.0
-offset_right = 40.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "QUIT"
-
 [node name="Bounding_Left" type="Area3D" parent="."]
 transform = Transform3D(0.542563, 0, 0, 0, 0.542563, 0, 0, 0, 0.542563, -16.2983, 0, -1.10783)
 
@@ -336,8 +266,6 @@ environment = SubResource("Environment_qy12w")
 [connection signal="is_intro" from="MusicController" to="RhythmCounter" method="_on_music_controller_is_intro"]
 [connection signal="is_intro" from="MusicController" to="InputIndicator" method="_on_music_controller_is_intro"]
 [connection signal="is_intro" from="MusicController" to="Control/CrowdMeter" method="_on_music_controller_is_intro"]
-[connection signal="pressed" from="Game Over/Retry" to="Game Over" method="_on_retry_pressed"]
-[connection signal="pressed" from="Game Over/Quit" to="Game Over" method="_on_quit_pressed"]
 [connection signal="area_entered" from="Bounding_Left" to="Control/CrowdMeter" method="_on_out_of_bounds"]
 [connection signal="area_entered" from="Bounding_Right" to="Control/CrowdMeter" method="_on_out_of_bounds"]
 

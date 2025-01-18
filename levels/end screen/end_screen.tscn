@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cx668y4e2uuua"]
+[gd_scene load_steps=16 format=3 uid="uid://cx668y4e2uuua"]
 
 [ext_resource type="Script" path="res://levels/start screen/start_screen.gd" id="1_v8kl0"]
 [ext_resource type="Texture2D" uid="uid://cth4ujnwgfxph" path="res://levels/start screen/Sprites/red_curtain-removebg-preview.png" id="2_61o6u"]
@@ -9,7 +9,11 @@
 [ext_resource type="Script" path="res://levels/start screen/buttons.gd" id="7_hmhgu"]
 [ext_resource type="Texture2D" uid="uid://xc160t35udul" path="res://levels/end screen/Sprites/blackboard-removebg-preview.png" id="7_xrytp"]
 [ext_resource type="FontFile" uid="uid://p4ubkwpsl1of" path="res://levels/end screen/Sprites/EraserRegular.ttf" id="8_h78qc"]
+[ext_resource type="Script" path="res://levels/end screen/leaderboard_names.gd" id="8_xm5i8"]
+[ext_resource type="Script" path="res://levels/end screen/personal_score.gd" id="9_htfy4"]
 [ext_resource type="Texture2D" uid="uid://bo58falmcmct5" path="res://levels/start screen/Sprites/Quit.png" id="10_dijjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xm5i8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcsph"]
 
@@ -81,7 +85,7 @@ position = Vector2(523, 585)
 scale = Vector2(0.551724, 0.326786)
 texture = ExtResource("7_xrytp")
 
-[node name="PersonalName" type="Sprite2D" parent="Container"]
+[node name="PersonalNameBB" type="Sprite2D" parent="Container"]
 position = Vector2(523, 709.625)
 scale = Vector2(0.551724, 0.309821)
 texture = ExtResource("7_xrytp")
@@ -106,7 +110,7 @@ position = Vector2(198, 584.75)
 scale = Vector2(0.751437, 0.326786)
 texture = ExtResource("7_xrytp")
 
-[node name="PersonalScore" type="Sprite2D" parent="Container"]
+[node name="PersonalScoreBB" type="Sprite2D" parent="Container"]
 position = Vector2(201.555, 707)
 scale = Vector2(0.699024, 0.304241)
 texture = ExtResource("7_xrytp")
@@ -171,6 +175,104 @@ theme_override_fonts/font = ExtResource("8_h78qc")
 theme_override_font_sizes/font_size = 39
 text = "3:"
 alignment = 1
+flat = true
+
+[node name="Score1" type="LineEdit" parent="Container"]
+offset_left = 78.0
+offset_top = 349.0
+offset_right = 318.0
+offset_bottom = 433.0
+pivot_offset = Vector2(294, 49.25)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+flat = true
+script = ExtResource("8_xm5i8")
+place_num = 1
+name_or_score = 1
+
+[node name="Score2" type="LineEdit" parent="Container"]
+offset_left = 82.0
+offset_top = 442.0
+offset_right = 328.0
+offset_bottom = 526.0
+pivot_offset = Vector2(291, -41.7499)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+flat = true
+script = ExtResource("8_xm5i8")
+place_num = 2
+name_or_score = 1
+
+[node name="Score3" type="LineEdit" parent="Container"]
+offset_left = 89.0
+offset_top = 540.0
+offset_right = 331.0
+offset_bottom = 624.0
+pivot_offset = Vector2(288, -139.75)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+flat = true
+script = ExtResource("8_xm5i8")
+place_num = 3
+name_or_score = 1
+
+[node name="1Name" type="LineEdit" parent="Container"]
+offset_left = 413.0
+offset_top = 347.0
+offset_right = 653.0
+offset_bottom = 431.0
+pivot_offset = Vector2(294, 49.25)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+flat = true
+script = ExtResource("8_xm5i8")
+place_num = 1
+
+[node name="2Name" type="LineEdit" parent="Container"]
+offset_left = 413.0
+offset_top = 442.0
+offset_right = 659.0
+offset_bottom = 526.0
+pivot_offset = Vector2(291, -41.7499)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+flat = true
+script = ExtResource("8_xm5i8")
+place_num = 2
+
+[node name="3Name" type="LineEdit" parent="Container"]
+offset_left = 418.0
+offset_top = 540.0
+offset_right = 660.0
+offset_bottom = 624.0
+pivot_offset = Vector2(288, -139.75)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+flat = true
+script = ExtResource("8_xm5i8")
+place_num = 3
+
+[node name="PersonalScore" type="LineEdit" parent="Container"]
+offset_left = 52.0
+offset_top = 677.0
+offset_right = 346.0
+offset_bottom = 735.0
+pivot_offset = Vector2(288, -139.75)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 39
+flat = true
+script = ExtResource("9_htfy4")
+
+[node name="PersonalName2" type="LineEdit" parent="Container"]
+offset_left = 407.0
+offset_top = 669.0
+offset_right = 634.0
+offset_bottom = 738.0
+pivot_offset = Vector2(288, -139.75)
+theme_override_fonts/font = ExtResource("8_h78qc")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xm5i8")
+placeholder_text = "YourName"
 flat = true
 
 [node name="Restart Game" type="Button" parent="."]

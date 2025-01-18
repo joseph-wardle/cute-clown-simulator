@@ -13,8 +13,10 @@ var equipped_costume = null
 var available_hats = []
 var available_costumes = []
 
+var current_score = 0
+
 #this is just something that the game needs
-var leaderboard = [{"test1" : 100}, {"test2" : 100}, {"test3" : 100}, {"test4" : 100}, {"test5" : 100}] 
+var leaderboard = [["test1",100], ["test2",200], ["test3",300]] 
 
 #here we are going to create save data for the global variables
 func save():
